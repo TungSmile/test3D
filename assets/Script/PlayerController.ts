@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Animation, log, Button, Quat } from 'cc';
+import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Animation, log, Button, Quat, EventKeyboard, KeyCode } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('PlayerController')
@@ -43,15 +43,19 @@ export class PlayerController extends Component {
     private frameBySecond: number = 0.00;
     // rate for smooth of frame (min to smooth)
     private timeRun: number = 0.01;
-    private carRot: Vec3 = new Vec3(0, 0, 0);
+    private directorX: number = 0;
+    private directorY: number = 0;
+    private directorZ: number = 0;
+
 
     start() {
         // Your initialization goes here.
         // input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
-        this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
-        this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
-        this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
-        this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        // this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        // this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        // this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        // this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        input.on(Input.EventType.KEY_DOWN, this.gohead, this);
 
     }
 
@@ -115,9 +119,31 @@ export class PlayerController extends Component {
 
     }
 
-    gohead(event: EventMouse) {
+    gohead(event: EventKeyboard) {
+        let t = this;
+        let quat=new Quat();
+        switch (event.keyCode) {
+            case KeyCode.ARROW_LEFT:
+                t.node.setRotationFromEuler(new Vec3(t.node.rotation.x, t.node.rotation.y + 25, t.node.rotation.z));
+                this.node.position = this.node.position.add3f(this.speed, 0, 0);
+                break;
+            case KeyCode.ARROW_RIGHT:
+                t.node.setRotationFromEuler(new Vec3(t.node.rotation.x, t.node.rotation.y - 25, t.node.rotation.z));
+                this.node.position = this.node.position.add3f(-this.speed, 0, 0);
+                break;
+            case KeyCode.ARROW_UP:
+                this.node.position = this.node.position.add3f(0, 0, this.speed);
+                this.hasRun++;
 
+
+                break;
+            case KeyCode.ARROW_DOWN:
+                this.node.position = this.node.position.add3f(0, 0, -this.speed);
+                break;
+
+        }
     }
+
 
     onOnceJumpEnd() {
         this._isMoving = false;
@@ -153,5 +179,8 @@ export class PlayerController extends Component {
                 t.frameBySecond = 0;
             }
         }
+        // if (t.hasRun == 10) {
+        //     t.node.setRotationFromEuler(new Vec3(this.node.rotation.x, -15, this.node.rotation.z));
+        // }
     }
 }

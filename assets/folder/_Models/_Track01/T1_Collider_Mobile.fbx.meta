@@ -1343,7 +1343,7 @@
           "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
           "__expectedType__": "cc.EffectAsset"
         },
-        "_techIdx": 0,
+        "_techIdx": "0",
         "_defines": [
           {
             "DCC_APP_NAME": 2,
@@ -1390,25 +1390,9 @@
               "b": 0,
               "a": 255
             },
-            "shininessExponentMap": {
-              "__uuid__": "aeff53d8-ed79-4421-9d8a-48dfef2089bc@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
             "shininessExponent": 25,
-            "specularGlossinessMap": {
-              "__uuid__": "aeff53d8-ed79-4421-9d8a-48dfef2089bc@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
-            "specularMap": {
-              "__uuid__": "aeff53d8-ed79-4421-9d8a-48dfef2089bc@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
             "specularFactor": 0.25,
-            "transparencyFactor": 0,
-            "metallicMap": {
-              "__uuid__": "aeff53d8-ed79-4421-9d8a-48dfef2089bc@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            }
+            "transparencyFactor": 0
           },
           {},
           {}
@@ -1463,13 +1447,6 @@
         ],
         "_props": [
           {
-            "mainColor": {
-              "__type__": "cc.Color",
-              "r": 241,
-              "g": 23,
-              "b": 23,
-              "a": 255
-            },
             "shininessExponent": 25,
             "specularFactor": 0.25,
             "transparencyFactor": 0
