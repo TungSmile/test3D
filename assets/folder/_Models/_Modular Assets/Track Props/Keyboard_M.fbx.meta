@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "96adc7e1-a520-416b-907b-c58819d3acc4",
+  "files": [],
+  "subMetas": {
+    "b45a1": {
+      "importer": "gltf-mesh",
+      "uuid": "96adc7e1-a520-416b-907b-c58819d3acc4@b45a1",
+      "displayName": "",
+      "id": "b45a1",
+      "name": "Cube.024.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "96adc7e1-a520-416b-907b-c58819d3acc4@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "186db": {
+      "importer": "gltf-scene",
+      "uuid": "96adc7e1-a520-416b-907b-c58819d3acc4@186db",
+      "displayName": "",
+      "id": "186db",
+      "name": "Keyboard_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "96adc7e1-a520-416b-907b-c58819d3acc4@186db",
+    "assetFinder": {
+      "meshes": [
+        "96adc7e1-a520-416b-907b-c58819d3acc4@b45a1"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "96adc7e1-a520-416b-907b-c58819d3acc4@c0014"
+      ],
+      "scenes": [
+        "96adc7e1-a520-416b-907b-c58819d3acc4@186db"
+      ]
+    }
+  }
+}

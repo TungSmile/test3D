@@ -1,0 +1,62 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "04f80546-9a1b-4c2f-a946-e267c61e4549",
+  "files": [],
+  "subMetas": {
+    "dbeb2": {
+      "importer": "gltf-mesh",
+      "uuid": "04f80546-9a1b-4c2f-a946-e267c61e4549@dbeb2",
+      "displayName": "",
+      "id": "dbeb2",
+      "name": "T1_Garage_Collider.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "23bb9": {
+      "importer": "gltf-scene",
+      "uuid": "04f80546-9a1b-4c2f-a946-e267c61e4549@23bb9",
+      "displayName": "",
+      "id": "23bb9",
+      "name": "T1_Garage_Collider_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "04f80546-9a1b-4c2f-a946-e267c61e4549@23bb9",
+    "assetFinder": {
+      "meshes": [
+        "04f80546-9a1b-4c2f-a946-e267c61e4549@dbeb2"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "04f80546-9a1b-4c2f-a946-e267c61e4549@23bb9"
+      ]
+    }
+  }
+}

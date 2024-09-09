@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "32916be3-337f-4733-baad-52adad9bab18",
+  "files": [],
+  "subMetas": {
+    "ad318": {
+      "importer": "gltf-mesh",
+      "uuid": "32916be3-337f-4733-baad-52adad9bab18@ad318",
+      "displayName": "",
+      "id": "ad318",
+      "name": "Plane.116.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "344c8": {
+      "importer": "gltf-material",
+      "uuid": "32916be3-337f-4733-baad-52adad9bab18@344c8",
+      "displayName": "",
+      "id": "344c8",
+      "name": "T2_Audience_S.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a6c50": {
+      "importer": "gltf-scene",
+      "uuid": "32916be3-337f-4733-baad-52adad9bab18@a6c50",
+      "displayName": "",
+      "id": "a6c50",
+      "name": "Audience1_5_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "32916be3-337f-4733-baad-52adad9bab18@a6c50",
+    "assetFinder": {
+      "meshes": [
+        "32916be3-337f-4733-baad-52adad9bab18@ad318"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "32916be3-337f-4733-baad-52adad9bab18@344c8"
+      ],
+      "scenes": [
+        "32916be3-337f-4733-baad-52adad9bab18@a6c50"
+      ]
+    }
+  }
+}

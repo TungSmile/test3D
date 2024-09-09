@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9",
+  "files": [],
+  "subMetas": {
+    "5667e": {
+      "importer": "gltf-mesh",
+      "uuid": "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@5667e",
+      "displayName": "",
+      "id": "5667e",
+      "name": "Mesh.369.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "16afd": {
+      "importer": "gltf-scene",
+      "uuid": "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@16afd",
+      "displayName": "",
+      "id": "16afd",
+      "name": "Tents01B_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@16afd",
+    "assetFinder": {
+      "meshes": [
+        "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@5667e"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@c0014"
+      ],
+      "scenes": [
+        "e20ec1b2-8bb8-49b4-966f-b8d256b5a3e9@16afd"
+      ]
+    }
+  }
+}

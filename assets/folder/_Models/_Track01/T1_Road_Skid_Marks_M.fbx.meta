@@ -1,0 +1,324 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "ceb3896e-7822-4596-a642-e50f983d2875",
+  "files": [],
+  "subMetas": {
+    "38684": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@38684",
+      "displayName": "",
+      "id": "38684",
+      "name": "RoadMarks01.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "42437": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@42437",
+      "displayName": "",
+      "id": "42437",
+      "name": "T1_Skidmarks_5.001.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b83ef": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@b83ef",
+      "displayName": "",
+      "id": "b83ef",
+      "name": "T1_Skidmarks_1.001.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f5f31": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@f5f31",
+      "displayName": "",
+      "id": "f5f31",
+      "name": "T1_Skidmarks_2.001.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "949f5": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@949f5",
+      "displayName": "",
+      "id": "949f5",
+      "name": "T1_Skidmarks_3.001.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "665ec": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@665ec",
+      "displayName": "",
+      "id": "665ec",
+      "name": "T1_Skidmarks_4.001.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ff2f7": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@ff2f7",
+      "displayName": "",
+      "id": "ff2f7",
+      "name": "T1_Skidmarks_6.001.mesh",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9276f": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@9276f",
+      "displayName": "",
+      "id": "9276f",
+      "name": "T1_Skidmarks_7.001.mesh",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "675dc": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@675dc",
+      "displayName": "",
+      "id": "675dc",
+      "name": "T1_Skidmarks_8.001.mesh",
+      "userData": {
+        "gltfIndex": 8
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0604": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@c0604",
+      "displayName": "",
+      "id": "c0604",
+      "name": "T1_Skidmarks_9.001.mesh",
+      "userData": {
+        "gltfIndex": 9
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b11a4": {
+      "importer": "gltf-mesh",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@b11a4",
+      "displayName": "",
+      "id": "b11a4",
+      "name": "T1_Skidmarks_10.001.mesh",
+      "userData": {
+        "gltfIndex": 10
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ceb3896e-7822-4596-a642-e50f983d2875@48b02"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "36e27": {
+      "importer": "gltf-material",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@36e27",
+      "displayName": "",
+      "id": "36e27",
+      "name": "T1_Skidmarks.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "760d0": {
+      "importer": "gltf-material",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@760d0",
+      "displayName": "",
+      "id": "760d0",
+      "name": "T1_Roadmarks1.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f5bea": {
+      "importer": "gltf-scene",
+      "uuid": "ceb3896e-7822-4596-a642-e50f983d2875@f5bea",
+      "displayName": "",
+      "id": "f5bea",
+      "name": "T1_Road_Skid_Marks_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "ceb3896e-7822-4596-a642-e50f983d2875@48b02"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "ceb3896e-7822-4596-a642-e50f983d2875@f5bea",
+    "assetFinder": {
+      "meshes": [
+        "ceb3896e-7822-4596-a642-e50f983d2875@b83ef",
+        "ceb3896e-7822-4596-a642-e50f983d2875@38684",
+        "ceb3896e-7822-4596-a642-e50f983d2875@f5f31",
+        "ceb3896e-7822-4596-a642-e50f983d2875@949f5",
+        "ceb3896e-7822-4596-a642-e50f983d2875@665ec",
+        "ceb3896e-7822-4596-a642-e50f983d2875@42437",
+        "ceb3896e-7822-4596-a642-e50f983d2875@ff2f7",
+        "ceb3896e-7822-4596-a642-e50f983d2875@9276f",
+        "ceb3896e-7822-4596-a642-e50f983d2875@675dc",
+        "ceb3896e-7822-4596-a642-e50f983d2875@c0604",
+        "ceb3896e-7822-4596-a642-e50f983d2875@b11a4"
+      ],
+      "skeletons": [],
+      "textures": [
+        "ceb3896e-7822-4596-a642-e50f983d2875@7d6ab"
+      ],
+      "materials": [
+        "ceb3896e-7822-4596-a642-e50f983d2875@36e27",
+        "ceb3896e-7822-4596-a642-e50f983d2875@760d0"
+      ],
+      "scenes": [
+        "ceb3896e-7822-4596-a642-e50f983d2875@f5bea"
+      ]
+    }
+  }
+}

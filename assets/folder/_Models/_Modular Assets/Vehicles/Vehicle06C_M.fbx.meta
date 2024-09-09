@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9c4298e8-ca46-42c1-b659-c84c7c5c010c",
+  "files": [],
+  "subMetas": {
+    "c45ef": {
+      "importer": "gltf-mesh",
+      "uuid": "9c4298e8-ca46-42c1-b659-c84c7c5c010c@c45ef",
+      "displayName": "",
+      "id": "c45ef",
+      "name": "Vehicle01_15_015.002.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "9c4298e8-ca46-42c1-b659-c84c7c5c010c@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6fa2f": {
+      "importer": "gltf-scene",
+      "uuid": "9c4298e8-ca46-42c1-b659-c84c7c5c010c@6fa2f",
+      "displayName": "",
+      "id": "6fa2f",
+      "name": "Vehicle06C_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "9c4298e8-ca46-42c1-b659-c84c7c5c010c@6fa2f",
+    "assetFinder": {
+      "meshes": [
+        "9c4298e8-ca46-42c1-b659-c84c7c5c010c@c45ef"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "9c4298e8-ca46-42c1-b659-c84c7c5c010c@c0014"
+      ],
+      "scenes": [
+        "9c4298e8-ca46-42c1-b659-c84c7c5c010c@6fa2f"
+      ]
+    }
+  }
+}

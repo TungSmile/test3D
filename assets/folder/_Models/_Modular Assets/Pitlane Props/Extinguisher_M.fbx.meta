@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "443c4bd6-8217-4be0-b6b9-c822ff4ca271",
+  "files": [],
+  "subMetas": {
+    "7c264": {
+      "importer": "gltf-mesh",
+      "uuid": "443c4bd6-8217-4be0-b6b9-c822ff4ca271@7c264",
+      "displayName": "",
+      "id": "7c264",
+      "name": "Mesh.145.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "443c4bd6-8217-4be0-b6b9-c822ff4ca271@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d059d": {
+      "importer": "gltf-scene",
+      "uuid": "443c4bd6-8217-4be0-b6b9-c822ff4ca271@d059d",
+      "displayName": "",
+      "id": "d059d",
+      "name": "Extinguisher_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "443c4bd6-8217-4be0-b6b9-c822ff4ca271@d059d",
+    "assetFinder": {
+      "meshes": [
+        "443c4bd6-8217-4be0-b6b9-c822ff4ca271@7c264"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "443c4bd6-8217-4be0-b6b9-c822ff4ca271@c0014"
+      ],
+      "scenes": [
+        "443c4bd6-8217-4be0-b6b9-c822ff4ca271@d059d"
+      ]
+    }
+  }
+}

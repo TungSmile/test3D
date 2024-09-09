@@ -1,0 +1,170 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4",
+  "files": [],
+  "subMetas": {
+    "17766": {
+      "importer": "gltf-mesh",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@17766",
+      "displayName": "",
+      "id": "17766",
+      "name": "Mesh.157.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bb103": {
+      "importer": "gltf-mesh",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@bb103",
+      "displayName": "",
+      "id": "bb103",
+      "name": "Mesh.156.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9764d": {
+      "importer": "gltf-mesh",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@9764d",
+      "displayName": "",
+      "id": "9764d",
+      "name": "Mesh.159.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cd6ed": {
+      "importer": "gltf-mesh",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@cd6ed",
+      "displayName": "",
+      "id": "cd6ed",
+      "name": "Mesh.163.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5afd6": {
+      "importer": "gltf-mesh",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@5afd6",
+      "displayName": "",
+      "id": "5afd6",
+      "name": "Mesh.175.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "31e51": {
+      "importer": "gltf-mesh",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@31e51",
+      "displayName": "",
+      "id": "31e51",
+      "name": "Mesh.222.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d22af": {
+      "importer": "gltf-scene",
+      "uuid": "fb4a44a3-e1aa-40ba-b052-0015980881c4@d22af",
+      "displayName": "",
+      "id": "d22af",
+      "name": "PitStop Equip01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "fb4a44a3-e1aa-40ba-b052-0015980881c4@d22af",
+    "assetFinder": {
+      "meshes": [
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@bb103",
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@17766",
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@9764d",
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@cd6ed",
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@5afd6",
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@31e51"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@c0014"
+      ],
+      "scenes": [
+        "fb4a44a3-e1aa-40ba-b052-0015980881c4@d22af"
+      ]
+    }
+  }
+}

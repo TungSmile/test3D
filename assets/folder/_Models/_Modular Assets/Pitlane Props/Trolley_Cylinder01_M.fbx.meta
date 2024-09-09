@@ -1,0 +1,170 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b",
+  "files": [],
+  "subMetas": {
+    "63080": {
+      "importer": "gltf-mesh",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@63080",
+      "displayName": "",
+      "id": "63080",
+      "name": "Mesh.317.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "74179": {
+      "importer": "gltf-scene",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@74179",
+      "displayName": "",
+      "id": "74179",
+      "name": "Trolley_Cylinder01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "97143": {
+      "importer": "gltf-mesh",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@97143",
+      "displayName": "",
+      "id": "97143",
+      "name": "Mesh.321.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "de0f1": {
+      "importer": "gltf-mesh",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@de0f1",
+      "displayName": "",
+      "id": "de0f1",
+      "name": "Mesh.316.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5536d": {
+      "importer": "gltf-mesh",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@5536d",
+      "displayName": "",
+      "id": "5536d",
+      "name": "Mesh.318.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9bcb3": {
+      "importer": "gltf-mesh",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@9bcb3",
+      "displayName": "",
+      "id": "9bcb3",
+      "name": "Mesh.319.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7fe80": {
+      "importer": "gltf-mesh",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@7fe80",
+      "displayName": "",
+      "id": "7fe80",
+      "name": "Mesh.320.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "5bfa6c13-4a19-4dd2-be37-836857c64c0b@74179",
+    "assetFinder": {
+      "meshes": [
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@de0f1",
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@63080",
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@5536d",
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@9bcb3",
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@7fe80",
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@97143"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@c0014"
+      ],
+      "scenes": [
+        "5bfa6c13-4a19-4dd2-be37-836857c64c0b@74179"
+      ]
+    }
+  }
+}

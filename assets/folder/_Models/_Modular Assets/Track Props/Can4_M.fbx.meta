@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3495fea8-77a8-40b1-a816-c60e66503ecc",
+  "files": [],
+  "subMetas": {
+    "b3b63": {
+      "importer": "gltf-mesh",
+      "uuid": "3495fea8-77a8-40b1-a816-c60e66503ecc@b3b63",
+      "displayName": "",
+      "id": "b3b63",
+      "name": "Cube.136.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "3495fea8-77a8-40b1-a816-c60e66503ecc@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "06d5f": {
+      "importer": "gltf-scene",
+      "uuid": "3495fea8-77a8-40b1-a816-c60e66503ecc@06d5f",
+      "displayName": "",
+      "id": "06d5f",
+      "name": "Can4_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "3495fea8-77a8-40b1-a816-c60e66503ecc@06d5f",
+    "assetFinder": {
+      "meshes": [
+        "3495fea8-77a8-40b1-a816-c60e66503ecc@b3b63"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "3495fea8-77a8-40b1-a816-c60e66503ecc@c0014"
+      ],
+      "scenes": [
+        "3495fea8-77a8-40b1-a816-c60e66503ecc@06d5f"
+      ]
+    }
+  }
+}

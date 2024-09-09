@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a6358281-8f4a-4958-99f9-350902dffbe6",
+  "files": [],
+  "subMetas": {
+    "46fe8": {
+      "importer": "gltf-mesh",
+      "uuid": "a6358281-8f4a-4958-99f9-350902dffbe6@46fe8",
+      "displayName": "",
+      "id": "46fe8",
+      "name": "Cube.159.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "a6358281-8f4a-4958-99f9-350902dffbe6@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3b844": {
+      "importer": "gltf-scene",
+      "uuid": "a6358281-8f4a-4958-99f9-350902dffbe6@3b844",
+      "displayName": "",
+      "id": "3b844",
+      "name": "GeneratorA_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "a6358281-8f4a-4958-99f9-350902dffbe6@3b844",
+    "assetFinder": {
+      "meshes": [
+        "a6358281-8f4a-4958-99f9-350902dffbe6@46fe8"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "a6358281-8f4a-4958-99f9-350902dffbe6@c0014"
+      ],
+      "scenes": [
+        "a6358281-8f4a-4958-99f9-350902dffbe6@3b844"
+      ]
+    }
+  }
+}

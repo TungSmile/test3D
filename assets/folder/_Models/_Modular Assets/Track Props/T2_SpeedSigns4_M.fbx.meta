@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7",
+  "files": [],
+  "subMetas": {
+    "b06f0": {
+      "importer": "gltf-mesh",
+      "uuid": "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@b06f0",
+      "displayName": "",
+      "id": "b06f0",
+      "name": "Mesh.134.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "71d3c": {
+      "importer": "gltf-scene",
+      "uuid": "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@71d3c",
+      "displayName": "",
+      "id": "71d3c",
+      "name": "T2_SpeedSigns4_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@71d3c",
+    "assetFinder": {
+      "meshes": [
+        "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@b06f0"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@c0014"
+      ],
+      "scenes": [
+        "7cc361ac-2b73-4fa8-a4d0-9b53fb0d1fc7@71d3c"
+      ]
+    }
+  }
+}

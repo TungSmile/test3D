@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "4b1512c8-09db-400e-b182-da1cb7eebc09",
+  "files": [],
+  "subMetas": {
+    "bd725": {
+      "importer": "gltf-mesh",
+      "uuid": "4b1512c8-09db-400e-b182-da1cb7eebc09@bd725",
+      "displayName": "",
+      "id": "bd725",
+      "name": "distance_lorrys_g.002.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "4b1512c8-09db-400e-b182-da1cb7eebc09@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a24ef": {
+      "importer": "gltf-scene",
+      "uuid": "4b1512c8-09db-400e-b182-da1cb7eebc09@a24ef",
+      "displayName": "",
+      "id": "a24ef",
+      "name": "Shed01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "4b1512c8-09db-400e-b182-da1cb7eebc09@a24ef",
+    "assetFinder": {
+      "meshes": [
+        "4b1512c8-09db-400e-b182-da1cb7eebc09@bd725"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "4b1512c8-09db-400e-b182-da1cb7eebc09@c0014"
+      ],
+      "scenes": [
+        "4b1512c8-09db-400e-b182-da1cb7eebc09@a24ef"
+      ]
+    }
+  }
+}

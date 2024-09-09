@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc",
+  "files": [],
+  "subMetas": {
+    "5e8e8": {
+      "importer": "gltf-mesh",
+      "uuid": "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@5e8e8",
+      "displayName": "",
+      "id": "5e8e8",
+      "name": "Mesh.372.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0b3b2": {
+      "importer": "gltf-mesh",
+      "uuid": "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@0b3b2",
+      "displayName": "",
+      "id": "0b3b2",
+      "name": "Plane.035.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "87d68": {
+      "importer": "gltf-scene",
+      "uuid": "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@87d68",
+      "displayName": "",
+      "id": "87d68",
+      "name": "Flag_T2_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@87d68",
+    "assetFinder": {
+      "meshes": [
+        "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@5e8e8",
+        "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@0b3b2"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@c0014"
+      ],
+      "scenes": [
+        "d3ccc887-f63b-4f1e-8e69-df9bad3d17cc@87d68"
+      ]
+    }
+  }
+}

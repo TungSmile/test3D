@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "7d333012-e750-4a0d-8307-77a9eccc6f4c",
+  "files": [],
+  "subMetas": {
+    "08c68": {
+      "importer": "gltf-mesh",
+      "uuid": "7d333012-e750-4a0d-8307-77a9eccc6f4c@08c68",
+      "displayName": "",
+      "id": "08c68",
+      "name": "Plane.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "25ac4": {
+      "importer": "gltf-material",
+      "uuid": "7d333012-e750-4a0d-8307-77a9eccc6f4c@25ac4",
+      "displayName": "",
+      "id": "25ac4",
+      "name": "T1_TreeBill.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2a2f6": {
+      "importer": "gltf-scene",
+      "uuid": "7d333012-e750-4a0d-8307-77a9eccc6f4c@2a2f6",
+      "displayName": "",
+      "id": "2a2f6",
+      "name": "T1_Tree1_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "7d333012-e750-4a0d-8307-77a9eccc6f4c@2a2f6",
+    "assetFinder": {
+      "meshes": [
+        "7d333012-e750-4a0d-8307-77a9eccc6f4c@08c68"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "7d333012-e750-4a0d-8307-77a9eccc6f4c@25ac4"
+      ],
+      "scenes": [
+        "7d333012-e750-4a0d-8307-77a9eccc6f4c@2a2f6"
+      ]
+    }
+  }
+}

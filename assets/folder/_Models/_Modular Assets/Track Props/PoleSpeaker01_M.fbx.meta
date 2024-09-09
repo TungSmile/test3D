@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9",
+  "files": [],
+  "subMetas": {
+    "57aa7": {
+      "importer": "gltf-mesh",
+      "uuid": "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@57aa7",
+      "displayName": "",
+      "id": "57aa7",
+      "name": "Cube.156.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "99ca7": {
+      "importer": "gltf-scene",
+      "uuid": "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@99ca7",
+      "displayName": "",
+      "id": "99ca7",
+      "name": "PoleSpeaker01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@99ca7",
+    "assetFinder": {
+      "meshes": [
+        "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@57aa7"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@c0014"
+      ],
+      "scenes": [
+        "b2c4e42f-8e16-4237-8dfd-8bddc30a67e9@99ca7"
+      ]
+    }
+  }
+}

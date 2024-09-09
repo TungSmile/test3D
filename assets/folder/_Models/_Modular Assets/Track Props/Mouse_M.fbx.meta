@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "6926f604-f014-474c-af39-f3a0b7f0a58d",
+  "files": [],
+  "subMetas": {
+    "695e0": {
+      "importer": "gltf-mesh",
+      "uuid": "6926f604-f014-474c-af39-f3a0b7f0a58d@695e0",
+      "displayName": "",
+      "id": "695e0",
+      "name": "Cube.155.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "6926f604-f014-474c-af39-f3a0b7f0a58d@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50e89": {
+      "importer": "gltf-scene",
+      "uuid": "6926f604-f014-474c-af39-f3a0b7f0a58d@50e89",
+      "displayName": "",
+      "id": "50e89",
+      "name": "Mouse_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "6926f604-f014-474c-af39-f3a0b7f0a58d@50e89",
+    "assetFinder": {
+      "meshes": [
+        "6926f604-f014-474c-af39-f3a0b7f0a58d@695e0"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "6926f604-f014-474c-af39-f3a0b7f0a58d@c0014"
+      ],
+      "scenes": [
+        "6926f604-f014-474c-af39-f3a0b7f0a58d@50e89"
+      ]
+    }
+  }
+}

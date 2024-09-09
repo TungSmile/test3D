@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f296b161-c069-478c-a0c2-2bc4641f7317",
+  "files": [],
+  "subMetas": {
+    "941df": {
+      "importer": "gltf-mesh",
+      "uuid": "f296b161-c069-478c-a0c2-2bc4641f7317@941df",
+      "displayName": "",
+      "id": "941df",
+      "name": "Fence1_S8_1E.004.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "f296b161-c069-478c-a0c2-2bc4641f7317@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d64e9": {
+      "importer": "gltf-scene",
+      "uuid": "f296b161-c069-478c-a0c2-2bc4641f7317@d64e9",
+      "displayName": "",
+      "id": "d64e9",
+      "name": "T2_CamHut01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "f296b161-c069-478c-a0c2-2bc4641f7317@d64e9",
+    "assetFinder": {
+      "meshes": [
+        "f296b161-c069-478c-a0c2-2bc4641f7317@941df"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f296b161-c069-478c-a0c2-2bc4641f7317@c0014"
+      ],
+      "scenes": [
+        "f296b161-c069-478c-a0c2-2bc4641f7317@d64e9"
+      ]
+    }
+  }
+}

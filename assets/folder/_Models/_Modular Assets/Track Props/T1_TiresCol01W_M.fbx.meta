@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f0e462d0-ced4-493c-b324-893d9f3957ce",
+  "files": [],
+  "subMetas": {
+    "ff8ed": {
+      "importer": "gltf-mesh",
+      "uuid": "f0e462d0-ced4-493c-b324-893d9f3957ce@ff8ed",
+      "displayName": "",
+      "id": "ff8ed",
+      "name": "Mesh.008.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "f0e462d0-ced4-493c-b324-893d9f3957ce@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3a654": {
+      "importer": "gltf-scene",
+      "uuid": "f0e462d0-ced4-493c-b324-893d9f3957ce@3a654",
+      "displayName": "",
+      "id": "3a654",
+      "name": "T1_TiresCol01W_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "f0e462d0-ced4-493c-b324-893d9f3957ce@3a654",
+    "assetFinder": {
+      "meshes": [
+        "f0e462d0-ced4-493c-b324-893d9f3957ce@ff8ed"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f0e462d0-ced4-493c-b324-893d9f3957ce@c0014"
+      ],
+      "scenes": [
+        "f0e462d0-ced4-493c-b324-893d9f3957ce@3a654"
+      ]
+    }
+  }
+}

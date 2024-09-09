@@ -1,0 +1,252 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "514a1691-0d48-4ad7-b639-d883239f1184",
+  "files": [],
+  "subMetas": {
+    "ae100": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@ae100",
+      "displayName": "",
+      "id": "ae100",
+      "name": "Seatings01.076.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5e1e2": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@5e1e2",
+      "displayName": "",
+      "id": "5e1e2",
+      "name": "Seatings01.077.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8aec4": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@8aec4",
+      "displayName": "",
+      "id": "8aec4",
+      "name": "T1_MainGrandstand_BaseStair_Material1.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "06988": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@06988",
+      "displayName": "",
+      "id": "06988",
+      "name": "Seatings01.079.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "18bf6": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@18bf6",
+      "displayName": "",
+      "id": "18bf6",
+      "name": "Seatings01.080.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0f835": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@0f835",
+      "displayName": "",
+      "id": "0f835",
+      "name": "Seatings01.081.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "663bc": {
+      "importer": "gltf-mesh",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@663bc",
+      "displayName": "",
+      "id": "663bc",
+      "name": "Seatings01.082.mesh",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "514a1691-0d48-4ad7-b639-d883239f1184@48b02"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9ca03": {
+      "importer": "gltf-material",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@9ca03",
+      "displayName": "",
+      "id": "9ca03",
+      "name": "T1_Audience_Chairs.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ad1b2": {
+      "importer": "gltf-scene",
+      "uuid": "514a1691-0d48-4ad7-b639-d883239f1184@ad1b2",
+      "displayName": "",
+      "id": "ad1b2",
+      "name": "T1_MainGrandstand_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "514a1691-0d48-4ad7-b639-d883239f1184@48b02"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "514a1691-0d48-4ad7-b639-d883239f1184@ad1b2",
+    "assetFinder": {
+      "meshes": [
+        "514a1691-0d48-4ad7-b639-d883239f1184@ae100",
+        "514a1691-0d48-4ad7-b639-d883239f1184@5e1e2",
+        "514a1691-0d48-4ad7-b639-d883239f1184@8aec4",
+        "514a1691-0d48-4ad7-b639-d883239f1184@06988",
+        "514a1691-0d48-4ad7-b639-d883239f1184@18bf6",
+        "514a1691-0d48-4ad7-b639-d883239f1184@0f835",
+        "514a1691-0d48-4ad7-b639-d883239f1184@663bc"
+      ],
+      "skeletons": [],
+      "textures": [
+        "514a1691-0d48-4ad7-b639-d883239f1184@7d6ab"
+      ],
+      "materials": [
+        "514a1691-0d48-4ad7-b639-d883239f1184@9ca03",
+        "514a1691-0d48-4ad7-b639-d883239f1184@c0014"
+      ],
+      "scenes": [
+        "514a1691-0d48-4ad7-b639-d883239f1184@ad1b2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f545af2c-4259-49d0-b489-c72d1171e64c",
+  "files": [],
+  "subMetas": {
+    "97d17": {
+      "importer": "gltf-mesh",
+      "uuid": "f545af2c-4259-49d0-b489-c72d1171e64c@97d17",
+      "displayName": "",
+      "id": "97d17",
+      "name": "Track.244.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "f545af2c-4259-49d0-b489-c72d1171e64c@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fba21": {
+      "importer": "gltf-scene",
+      "uuid": "f545af2c-4259-49d0-b489-c72d1171e64c@fba21",
+      "displayName": "",
+      "id": "fba21",
+      "name": "T1_Pit_Building_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "f545af2c-4259-49d0-b489-c72d1171e64c@fba21",
+    "assetFinder": {
+      "meshes": [
+        "f545af2c-4259-49d0-b489-c72d1171e64c@97d17"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f545af2c-4259-49d0-b489-c72d1171e64c@c0014"
+      ],
+      "scenes": [
+        "f545af2c-4259-49d0-b489-c72d1171e64c@fba21"
+      ]
+    }
+  }
+}

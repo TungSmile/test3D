@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "113b006b-ac8e-486f-a3c2-9105494016f6",
+  "files": [],
+  "subMetas": {
+    "a1593": {
+      "importer": "gltf-mesh",
+      "uuid": "113b006b-ac8e-486f-a3c2-9105494016f6@a1593",
+      "displayName": "",
+      "id": "a1593",
+      "name": "Cube.134.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "113b006b-ac8e-486f-a3c2-9105494016f6@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4c64c": {
+      "importer": "gltf-scene",
+      "uuid": "113b006b-ac8e-486f-a3c2-9105494016f6@4c64c",
+      "displayName": "",
+      "id": "4c64c",
+      "name": "Can2_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "113b006b-ac8e-486f-a3c2-9105494016f6@4c64c",
+    "assetFinder": {
+      "meshes": [
+        "113b006b-ac8e-486f-a3c2-9105494016f6@a1593"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "113b006b-ac8e-486f-a3c2-9105494016f6@c0014"
+      ],
+      "scenes": [
+        "113b006b-ac8e-486f-a3c2-9105494016f6@4c64c"
+      ]
+    }
+  }
+}

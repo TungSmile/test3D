@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88",
+  "files": [],
+  "subMetas": {
+    "6bd59": {
+      "importer": "gltf-mesh",
+      "uuid": "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@6bd59",
+      "displayName": "",
+      "id": "6bd59",
+      "name": "Mesh.361.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4c78e": {
+      "importer": "gltf-scene",
+      "uuid": "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@4c78e",
+      "displayName": "",
+      "id": "4c78e",
+      "name": "T1_PitWall_T1_Mobile.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@4c78e",
+    "assetFinder": {
+      "meshes": [
+        "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@6bd59"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@c0014"
+      ],
+      "scenes": [
+        "b8d849b4-bfe0-4dc9-b63b-6e89f63eae88@4c78e"
+      ]
+    }
+  }
+}

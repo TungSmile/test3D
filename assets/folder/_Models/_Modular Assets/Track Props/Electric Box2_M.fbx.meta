@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "39836e74-c9ab-4a04-8a81-a72e9b6da136",
+  "files": [],
+  "subMetas": {
+    "bf48e": {
+      "importer": "gltf-mesh",
+      "uuid": "39836e74-c9ab-4a04-8a81-a72e9b6da136@bf48e",
+      "displayName": "",
+      "id": "bf48e",
+      "name": "Cube.035.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "39836e74-c9ab-4a04-8a81-a72e9b6da136@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cbf07": {
+      "importer": "gltf-scene",
+      "uuid": "39836e74-c9ab-4a04-8a81-a72e9b6da136@cbf07",
+      "displayName": "",
+      "id": "cbf07",
+      "name": "Electric Box2_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "39836e74-c9ab-4a04-8a81-a72e9b6da136@cbf07",
+    "assetFinder": {
+      "meshes": [
+        "39836e74-c9ab-4a04-8a81-a72e9b6da136@bf48e"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "39836e74-c9ab-4a04-8a81-a72e9b6da136@c0014"
+      ],
+      "scenes": [
+        "39836e74-c9ab-4a04-8a81-a72e9b6da136@cbf07"
+      ]
+    }
+  }
+}

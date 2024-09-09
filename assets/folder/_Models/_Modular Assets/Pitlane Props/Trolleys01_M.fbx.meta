@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e",
+  "files": [],
+  "subMetas": {
+    "522c0": {
+      "importer": "gltf-mesh",
+      "uuid": "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@522c0",
+      "displayName": "",
+      "id": "522c0",
+      "name": "Mesh.338.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "15a70": {
+      "importer": "gltf-mesh",
+      "uuid": "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@15a70",
+      "displayName": "",
+      "id": "15a70",
+      "name": "Mesh.339.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b7eec": {
+      "importer": "gltf-scene",
+      "uuid": "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@b7eec",
+      "displayName": "",
+      "id": "b7eec",
+      "name": "Trolleys01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@b7eec",
+    "assetFinder": {
+      "meshes": [
+        "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@522c0",
+        "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@15a70"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@c0014"
+      ],
+      "scenes": [
+        "3dbe9014-97f1-440d-93de-a6a0fdc3fb1e@b7eec"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "8e371182-9434-48f2-9075-e52b8b31b42e",
+  "files": [],
+  "subMetas": {
+    "95246": {
+      "importer": "gltf-scene",
+      "uuid": "8e371182-9434-48f2-9075-e52b8b31b42e@95246",
+      "displayName": "",
+      "id": "95246",
+      "name": "Can3_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ded20": {
+      "importer": "gltf-mesh",
+      "uuid": "8e371182-9434-48f2-9075-e52b8b31b42e@ded20",
+      "displayName": "",
+      "id": "ded20",
+      "name": "Cube.135.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "8e371182-9434-48f2-9075-e52b8b31b42e@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "8e371182-9434-48f2-9075-e52b8b31b42e@95246",
+    "assetFinder": {
+      "meshes": [
+        "8e371182-9434-48f2-9075-e52b8b31b42e@ded20"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "8e371182-9434-48f2-9075-e52b8b31b42e@c0014"
+      ],
+      "scenes": [
+        "8e371182-9434-48f2-9075-e52b8b31b42e@95246"
+      ]
+    }
+  }
+}

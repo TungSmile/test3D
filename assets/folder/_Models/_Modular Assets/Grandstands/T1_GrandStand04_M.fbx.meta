@@ -1,0 +1,252 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955",
+  "files": [],
+  "subMetas": {
+    "8c2d8": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@8c2d8",
+      "displayName": "",
+      "id": "8c2d8",
+      "name": "Cube.217.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "67e63": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@67e63",
+      "displayName": "",
+      "id": "67e63",
+      "name": "Cube.218.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cca75": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@cca75",
+      "displayName": "",
+      "id": "cca75",
+      "name": "Cube.219.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0ea3d": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@0ea3d",
+      "displayName": "",
+      "id": "0ea3d",
+      "name": "Cube.220.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e2abd": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@e2abd",
+      "displayName": "",
+      "id": "e2abd",
+      "name": "Cube.221.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "28ad5": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@28ad5",
+      "displayName": "",
+      "id": "28ad5",
+      "name": "Cube.222.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b9434": {
+      "importer": "gltf-mesh",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@b9434",
+      "displayName": "",
+      "id": "b9434",
+      "name": "Cube.223.mesh",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "5de94f42-f908-4c78-b927-223bbd4e5955@48b02"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9ca03": {
+      "importer": "gltf-material",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@9ca03",
+      "displayName": "",
+      "id": "9ca03",
+      "name": "T1_Audience_Chairs.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4118c": {
+      "importer": "gltf-scene",
+      "uuid": "5de94f42-f908-4c78-b927-223bbd4e5955@4118c",
+      "displayName": "",
+      "id": "4118c",
+      "name": "T1_GrandStand04_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "5de94f42-f908-4c78-b927-223bbd4e5955@48b02"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "5de94f42-f908-4c78-b927-223bbd4e5955@4118c",
+    "assetFinder": {
+      "meshes": [
+        "5de94f42-f908-4c78-b927-223bbd4e5955@8c2d8",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@67e63",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@cca75",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@0ea3d",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@e2abd",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@28ad5",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@b9434"
+      ],
+      "skeletons": [],
+      "textures": [
+        "5de94f42-f908-4c78-b927-223bbd4e5955@7d6ab"
+      ],
+      "materials": [
+        "5de94f42-f908-4c78-b927-223bbd4e5955@c0014",
+        "5de94f42-f908-4c78-b927-223bbd4e5955@9ca03"
+      ],
+      "scenes": [
+        "5de94f42-f908-4c78-b927-223bbd4e5955@4118c"
+      ]
+    }
+  }
+}

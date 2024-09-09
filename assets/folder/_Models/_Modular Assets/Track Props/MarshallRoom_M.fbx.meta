@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c",
+  "files": [],
+  "subMetas": {
+    "cadf4": {
+      "importer": "gltf-mesh",
+      "uuid": "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@cadf4",
+      "displayName": "",
+      "id": "cadf4",
+      "name": "Cube.154.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "23eb3": {
+      "importer": "gltf-scene",
+      "uuid": "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@23eb3",
+      "displayName": "",
+      "id": "23eb3",
+      "name": "MarshallRoom_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@23eb3",
+    "assetFinder": {
+      "meshes": [
+        "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@cadf4"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@c0014"
+      ],
+      "scenes": [
+        "e6bac1ee-3b13-4f98-b73c-2eb4bdae127c@23eb3"
+      ]
+    }
+  }
+}

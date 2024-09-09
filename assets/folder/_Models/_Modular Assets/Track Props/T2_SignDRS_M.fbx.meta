@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "38e52759-07ee-488b-81ec-6760e7f97f30",
+  "files": [],
+  "subMetas": {
+    "44b02": {
+      "importer": "gltf-mesh",
+      "uuid": "38e52759-07ee-488b-81ec-6760e7f97f30@44b02",
+      "displayName": "",
+      "id": "44b02",
+      "name": "Mesh.354.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "38e52759-07ee-488b-81ec-6760e7f97f30@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "91b3c": {
+      "importer": "gltf-scene",
+      "uuid": "38e52759-07ee-488b-81ec-6760e7f97f30@91b3c",
+      "displayName": "",
+      "id": "91b3c",
+      "name": "T2_SignDRS_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "38e52759-07ee-488b-81ec-6760e7f97f30@91b3c",
+    "assetFinder": {
+      "meshes": [
+        "38e52759-07ee-488b-81ec-6760e7f97f30@44b02"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "38e52759-07ee-488b-81ec-6760e7f97f30@c0014"
+      ],
+      "scenes": [
+        "38e52759-07ee-488b-81ec-6760e7f97f30@91b3c"
+      ]
+    }
+  }
+}

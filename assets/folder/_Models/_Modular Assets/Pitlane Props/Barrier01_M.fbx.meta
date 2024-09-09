@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f0c50f48-ea6b-445e-8e1e-7e73383506f9",
+  "files": [],
+  "subMetas": {
+    "dd2a4": {
+      "importer": "gltf-mesh",
+      "uuid": "f0c50f48-ea6b-445e-8e1e-7e73383506f9@dd2a4",
+      "displayName": "",
+      "id": "dd2a4",
+      "name": "Mesh.365.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "f0c50f48-ea6b-445e-8e1e-7e73383506f9@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f0f02": {
+      "importer": "gltf-scene",
+      "uuid": "f0c50f48-ea6b-445e-8e1e-7e73383506f9@f0f02",
+      "displayName": "",
+      "id": "f0f02",
+      "name": "Barrier01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "f0c50f48-ea6b-445e-8e1e-7e73383506f9@f0f02",
+    "assetFinder": {
+      "meshes": [
+        "f0c50f48-ea6b-445e-8e1e-7e73383506f9@dd2a4"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "f0c50f48-ea6b-445e-8e1e-7e73383506f9@c0014"
+      ],
+      "scenes": [
+        "f0c50f48-ea6b-445e-8e1e-7e73383506f9@f0f02"
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "5474380c-64e8-4fc8-abc9-1b2c65b888e1",
+  "files": [],
+  "subMetas": {
+    "98223": {
+      "importer": "gltf-material",
+      "uuid": "5474380c-64e8-4fc8-abc9-1b2c65b888e1@98223",
+      "displayName": "",
+      "id": "98223",
+      "name": "FakeShadows.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "70a10": {
+      "importer": "gltf-mesh",
+      "uuid": "5474380c-64e8-4fc8-abc9-1b2c65b888e1@70a10",
+      "displayName": "",
+      "id": "70a10",
+      "name": "Plane.048.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "5474380c-64e8-4fc8-abc9-1b2c65b888e1@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/folder/_Models/Cars"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "810c8": {
+      "importer": "gltf-scene",
+      "uuid": "5474380c-64e8-4fc8-abc9-1b2c65b888e1@810c8",
+      "displayName": "",
+      "id": "810c8",
+      "name": "CarShadows.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "db://assets/folder/_Models/Cars"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "5474380c-64e8-4fc8-abc9-1b2c65b888e1@810c8",
+    "assetFinder": {
+      "meshes": [
+        "5474380c-64e8-4fc8-abc9-1b2c65b888e1@70a10"
+      ],
+      "skeletons": [],
+      "textures": [
+        "5474380c-64e8-4fc8-abc9-1b2c65b888e1@7d6ab"
+      ],
+      "materials": [
+        "5474380c-64e8-4fc8-abc9-1b2c65b888e1@98223"
+      ],
+      "scenes": [
+        "5474380c-64e8-4fc8-abc9-1b2c65b888e1@810c8"
+      ]
+    }
+  }
+}

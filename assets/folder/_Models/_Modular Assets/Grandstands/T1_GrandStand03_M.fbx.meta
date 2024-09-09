@@ -1,0 +1,234 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6",
+  "files": [],
+  "subMetas": {
+    "0e9c6": {
+      "importer": "gltf-mesh",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@0e9c6",
+      "displayName": "",
+      "id": "0e9c6",
+      "name": "Cube.162.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "367b5": {
+      "importer": "gltf-mesh",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@367b5",
+      "displayName": "",
+      "id": "367b5",
+      "name": "Cube.163.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "49ac9": {
+      "importer": "gltf-mesh",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@49ac9",
+      "displayName": "",
+      "id": "49ac9",
+      "name": "T1_GrandStand03_Base_Material0.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c3b49": {
+      "importer": "gltf-mesh",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@c3b49",
+      "displayName": "",
+      "id": "c3b49",
+      "name": "Cube.165.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "eebab": {
+      "importer": "gltf-mesh",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@eebab",
+      "displayName": "",
+      "id": "eebab",
+      "name": "Cube.166.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8eafe": {
+      "importer": "gltf-mesh",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@8eafe",
+      "displayName": "",
+      "id": "8eafe",
+      "name": "Cube.167.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@48b02"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9ca03": {
+      "importer": "gltf-material",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@9ca03",
+      "displayName": "",
+      "id": "9ca03",
+      "name": "T1_Audience_Chairs.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "611eb": {
+      "importer": "gltf-scene",
+      "uuid": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@611eb",
+      "displayName": "",
+      "id": "611eb",
+      "name": "T1_GrandStand03_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@48b02"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@611eb",
+    "assetFinder": {
+      "meshes": [
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@0e9c6",
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@367b5",
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@49ac9",
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@c3b49",
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@eebab",
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@8eafe"
+      ],
+      "skeletons": [],
+      "textures": [
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@7d6ab"
+      ],
+      "materials": [
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@c0014",
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@9ca03"
+      ],
+      "scenes": [
+        "a0577071-fec9-4299-8ff6-9b6f0b6c26d6@611eb"
+      ]
+    }
+  }
+}

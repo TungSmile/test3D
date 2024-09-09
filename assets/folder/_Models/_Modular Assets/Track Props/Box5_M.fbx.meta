@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4",
+  "files": [],
+  "subMetas": {
+    "268af": {
+      "importer": "gltf-mesh",
+      "uuid": "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@268af",
+      "displayName": "",
+      "id": "268af",
+      "name": "Cube.132.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "40af5": {
+      "importer": "gltf-scene",
+      "uuid": "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@40af5",
+      "displayName": "",
+      "id": "40af5",
+      "name": "Box5_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@40af5",
+    "assetFinder": {
+      "meshes": [
+        "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@268af"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@c0014"
+      ],
+      "scenes": [
+        "c21e87ef-0dc5-47b6-913d-bdf9bcb9ccf4@40af5"
+      ]
+    }
+  }
+}

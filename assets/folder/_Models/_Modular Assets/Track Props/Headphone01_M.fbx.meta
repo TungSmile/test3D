@@ -1,0 +1,80 @@
+{
+  "ver": "2.3.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e7799acd-1976-4178-b969-c703d5f86bbd",
+  "files": [],
+  "subMetas": {
+    "7ce3f": {
+      "importer": "gltf-mesh",
+      "uuid": "e7799acd-1976-4178-b969-c703d5f86bbd@7ce3f",
+      "displayName": "",
+      "id": "7ce3f",
+      "name": "Circle.021.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c0014": {
+      "importer": "gltf-material",
+      "uuid": "e7799acd-1976-4178-b969-c703d5f86bbd@c0014",
+      "displayName": "",
+      "id": "c0014",
+      "name": "T1_Main_Mobile.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ec434": {
+      "importer": "gltf-scene",
+      "uuid": "e7799acd-1976-4178-b969-c703d5f86bbd@ec434",
+      "displayName": "",
+      "id": "ec434",
+      "name": "Headphone01_M.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "e7799acd-1976-4178-b969-c703d5f86bbd@ec434",
+    "assetFinder": {
+      "meshes": [
+        "e7799acd-1976-4178-b969-c703d5f86bbd@7ce3f"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "e7799acd-1976-4178-b969-c703d5f86bbd@c0014"
+      ],
+      "scenes": [
+        "e7799acd-1976-4178-b969-c703d5f86bbd@ec434"
+      ]
+    }
+  }
+}
