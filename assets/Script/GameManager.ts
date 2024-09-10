@@ -21,7 +21,6 @@ export class GameManager extends Component {
     private _curState: GameState = GameState.GS_INIT;
 
     start() {
-        this.generateRoad();
 
     }
     generateRoad() {

@@ -1,186 +1,144 @@
-import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Animation, log, Button, Quat, EventKeyboard, KeyCode } from 'cc';
+import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Animation, log, Button, Quat, EventKeyboard, KeyCode, math, CapsuleCollider, ICollisionEvent, ITriggerEvent } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('PlayerController')
 export class PlayerController extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use the `property` decorator if you want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
-    // for fake tween
-    // Whether the jump command is received or not
-    private _startJump: boolean = false;
-    // Jump step length
-    private _jumpStep: number = 0.0;
-    // current jump time
-    private _curJumpTime: number = 0.0;
-    // length of each jump
-    private _jumpTime: number = 0.1;
-    // current jump speed
-    private _curJumpSpeed: number = 0.0;
-    // current character position
-    private _curPos: Vec3 = new Vec3();
-    // the difference in position of the current frame movement during each jump
-    private _deltaPos: Vec3 = new Vec3(0, 0, 0);
-    // target position of the character
-    private _targetPos: Vec3 = new Vec3();
-    private _isMoving = false;
-
-    @property({ type: Animation })
-    public BodyAnim: Animation | null = null;
 
     @property({ type: Node })
     public accelerator: Node | null = null;
-
-
+    // @property({ type: CapsuleCollider })
+    // private collider: CapsuleCollider = null;
     private run: boolean = false;
-    private speed: number = 1;
+    private speed: number = 10;
     private hasRun: number = 0;
-    private carPos: Vec3 = new Vec3(0, 0, 0);
-    private frameBySecond: number = 0.00;
-    // rate for smooth of frame (min to smooth)
-    private timeRun: number = 0.01;
-    private directorX: number = 0;
-    private directorY: number = 0;
-    private directorZ: number = 0;
-
+    private carPos: Vec3 = new Vec3(0, 0, 1);
+    private redirect: boolean = false;
+    private rotationCar: Quat = new Quat();
+    private isRight: boolean = false;
 
     start() {
         // Your initialization goes here.
         // input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
-        // this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
-        // this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
-        // this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
-        // this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        // this.collider = this.node.getComponent(CapsuleCollider);
+        this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
         input.on(Input.EventType.KEY_DOWN, this.gohead, this);
+        input.on(Input.EventType.KEY_UP, this.brake, this);
+        // this.collider.on('onCollisionStay', this.onCollision, this);
+        // this.collider.on('onTriggerStay', this.onTriggerStay, this);
 
     }
 
+    private onCollision(event: ICollisionEvent) {
+        console.log(event.type, event);
+    }
+    private onTriggerStay(event: ITriggerEvent) {
+        console.log(event.type, event);
+    }
 
     onTouchStart(e) {
-        console.log("s", this.carPos);
-        console.log("km", this.hasRun);
-
         this.run = true;
     }
     onTouchEnd(e) {
-        console.log("e", this.carPos);
         this.run = false;
     }
     onTouchCancel(e) {
-        console.log("e", this.carPos);
         this.run = false;
     }
     onTouchMove(e) {
-        console.log("e", this.carPos);
         this.run = false;
     }
 
-    setInputActive(active: boolean) {
-        if (active) {
-            input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
-        } else {
-            input.off(Input.EventType.MOUSE_UP, this.onMouseUp, this);
-        }
-    }
-
-    onMouseUp(event: EventMouse) {
-        if (event.getButton() === 0) {
-            this.jumpByStep(1);
-        }
-        else if (event.getButton() === 2) {
-            this.jumpByStep(2);
-        }
-
-    }
-
-    jumpByStep(step: number) {
-        if (this._startJump) {
-            return;
-        }
-        this._startJump = true;
-        this._jumpStep = step;
-        this._curJumpTime = 0;
-        this._curJumpSpeed = this._jumpStep / this._jumpTime;
-        this.node.getPosition(this._curPos);
-        Vec3.add(this._targetPos, this._curPos, new Vec3(0, 0, -this._jumpStep));
-        // Vec3.add(this._targetPos, this._curPos, new Vec3(this._jumpStep, 0, 0));
-        this._isMoving = true;
-        // if (this.BodyAnim) {
-        //     if (step === 1) {
-        //         this.BodyAnim.play('oneStep');
-        //     } else if (step === 2) {
-        //         this.BodyAnim.play('twoStep');
-        //     }
-        // }
-
-    }
 
     gohead(event: EventKeyboard) {
         let t = this;
-        let quat=new Quat();
+        console.log(t.hasRun);
         switch (event.keyCode) {
             case KeyCode.ARROW_LEFT:
-                t.node.setRotationFromEuler(new Vec3(t.node.rotation.x, t.node.rotation.y + 25, t.node.rotation.z));
-                this.node.position = this.node.position.add3f(this.speed, 0, 0);
+                t.isRight = false;
+                t.redirect = true;
                 break;
             case KeyCode.ARROW_RIGHT:
-                t.node.setRotationFromEuler(new Vec3(t.node.rotation.x, t.node.rotation.y - 25, t.node.rotation.z));
-                this.node.position = this.node.position.add3f(-this.speed, 0, 0);
+                t.isRight = true;
+                t.redirect = true;
                 break;
             case KeyCode.ARROW_UP:
-                this.node.position = this.node.position.add3f(0, 0, this.speed);
-                this.hasRun++;
-
-
+                t.run = true;
                 break;
             case KeyCode.ARROW_DOWN:
-                this.node.position = this.node.position.add3f(0, 0, -this.speed);
+                t.run = false;
+                break;
+            case KeyCode.KEY_A:
+                t.isRight = false;
+                t.redirect = true;
+                break;
+            case KeyCode.KEY_D:
+                t.isRight = true;
+                t.redirect = true;
+                break;
+            case KeyCode.KEY_W:
+                t.run = true;
+                break;
+            case KeyCode.KEY_S:
+                t.run = false;
+                break;
+        }
+    }
+
+    brake(event: EventKeyboard) {
+        // tween for brake but no idea
+        let t = this;
+        switch (event.keyCode) {
+            case KeyCode.ARROW_LEFT:
+                t.redirect = false;
+                break;
+            case KeyCode.ARROW_RIGHT:
+                t.redirect = false;
+                break;
+            case KeyCode.ARROW_UP:
+                t.run = false;
+                break;
+            case KeyCode.ARROW_DOWN:
+                t.run = false;
+                break;
+            case KeyCode.KEY_A:
+                t.redirect = false;
+                break;
+            case KeyCode.KEY_D:
+                t.redirect = false;
+                break;
+            default:
+                t.run = false;
                 break;
 
         }
     }
 
 
-    onOnceJumpEnd() {
-        this._isMoving = false;
-    }
 
     update(deltaTime: number) {
-        // if (this._startJump) {
-        //     this._curJumpTime += deltaTime;
-        //     if (this._curJumpTime > this._jumpTime) {
-        //         // end
-        //         this.node.setPosition(this._targetPos);
-        //         this._startJump = false;
-        //     } else {
-        //         // tween
-        //         this.node.getPosition(this._curPos);
-        //         this._deltaPos.x = this._curJumpSpeed * deltaTime;
-        //         Vec3.add(this._curPos, this._curPos, this._deltaPos);
-        //         this.node.setPosition(this._curPos);
-        //     }
-        // }
-
         let t = this;
         if (t.run) {
-            t.frameBySecond += deltaTime;
-            if (t.frameBySecond >= t.timeRun) {
-                t.hasRun += t.speed;
-                // if (t.hasRun == 20) {
-                //     t.node.setRotationFromEuler(new Vec3(this.node.rotation.x, -15, this.node.rotation.z));
-                // }
+            const movement = new Vec3();
+            t.speed <= 40 ? t.speed += 0.05 : 0;
+            Vec3.multiplyScalar(movement, t.carPos, t.speed * deltaTime);
+            t.node.translate(movement);
 
-                Vec3.add(t.carPos, t.carPos, new Vec3(0, 0, t.hasRun / 1000));
-                this.node.setPosition(t.carPos);
-                t.frameBySecond = 0;
-            }
+            // t.hasRun += t.speed;
+            // Vec3.add(t.carPos, t.carPos, new Vec3(0, 0, t.hasRun / 2000));
+            // this.node.translate(t.carPos);
+
+        } else {
+            t.speed >= 10 ? t.speed -= 0.05 : 0;
         }
-        // if (t.hasRun == 10) {
-        //     t.node.setRotationFromEuler(new Vec3(this.node.rotation.x, -15, this.node.rotation.z));
-        // }
+        if (t.redirect) {
+            Quat.fromAxisAngle(t.rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
+            t.node.rotate(t.rotationCar)
+        }
+
     }
 }
