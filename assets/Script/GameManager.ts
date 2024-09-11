@@ -13,55 +13,30 @@ enum GameState {
 @ccclass('GameManager')
 export class GameManager extends Component {
 
-    @property({ type: Prefab })
-    public cubePrfb: Prefab | null = null;
-    @property({ type: CCInteger })
-    public roadLength: number = 100;
-    private _road: number[] = [];
+    @property({ type: Node })
+    public PointS: Node | null = null;
+    @property({ type: Node })
+    public Player: Node | null = null;
+
     private _curState: GameState = GameState.GS_INIT;
 
     start() {
-
-    }
-    generateRoad() {
-
-        this.node.removeAllChildren();
-
-        this._road = [];
-        // startPos
-        this._road.push(BlockType.BT_STONE);
-
-        for (let i = 1; i < this.roadLength; i++) {
-            if (this._road[i - 1] === BlockType.BT_NONE) {
-                this._road.push(BlockType.BT_STONE);
-            } else {
-                this._road.push(Math.floor(Math.random() * 2));
-            }
-        }
-
-        for (let j = 0; j < this._road.length; j++) {
-            let block: Node = this.spawnBlockByType(this._road[j]);
-            if (block) {
-                this.node.addChild(block);
-                block.setPosition(0, -1.5, j);
-            }
-        }
+        let t = this;
+        t.getPlayerToPointS();
     }
 
-    spawnBlockByType(type: BlockType) {
-        if (!this.cubePrfb) {
-            return null;
-        }
 
-        let block: Node | null = null;
-        switch (type) {
-            case BlockType.BT_STONE:
-                block = instantiate(this.cubePrfb);
-                break;
-        }
-
-        return block;
+    getPlayerToPointS() {
+        let t = this;
+        if (!t.PointS || !t.Player) return;
+        t.Player.setWorldPosition(t.PointS.position);
+        t.Player.setWorldRotation(t.PointS.rotation);
     }
+
+
+
+
+
 
     update(deltaTime: number) {
 
