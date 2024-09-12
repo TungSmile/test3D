@@ -1437,7 +1437,7 @@
         "_props": [
           {
             "mainTexture": {
-              "__uuid__": "f2afdc01-b8fd-478f-ad83-fe9ba86cc260@6c48a",
+              "__uuid__": "595ad904-26e7-439f-add5-bb83a508be6b@6c48a",
               "__expectedType__": "cc.Texture2D"
             },
             "transparencyFactor": 0
@@ -1495,7 +1495,7 @@
         "_props": [
           {
             "mainTexture": {
-              "__uuid__": "717ddf9f-df8d-4138-8dd7-ee8772c632c6@6c48a",
+              "__uuid__": "96532ffb-cbc4-419a-9ed6-190f714f39c9@6c48a",
               "__expectedType__": "cc.Texture2D"
             },
             "transparencyFactor": 0
@@ -1727,7 +1727,7 @@
         "_props": [
           {
             "mainTexture": {
-              "__uuid__": "717ddf9f-df8d-4138-8dd7-ee8772c632c6@6c48a",
+              "__uuid__": "1d3c4129-32d8-4c5d-92b0-74eec16d866d@6c48a",
               "__expectedType__": "cc.Texture2D"
             },
             "transparencyFactor": 0
