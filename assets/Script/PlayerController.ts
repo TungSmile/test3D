@@ -5,26 +5,21 @@ const { ccclass, property } = _decorator;
 export class PlayerController extends Component {
 
     @property({ type: Node })
-    private clockwise: Node | null = null;
+    public clockwise: Node | null = null;
     @property({ type: Label })
-    private numberSpeed: Label | null = null;
+    public numberSpeed: Label | null = null;
     @property({ type: Node })
     public accelerator: Node | null = null;
-    // @property({ type: CapsuleCollider })
-    // private collider: CapsuleCollider = null;
-    private run: boolean = false;
-    private speed: number = 10;
-    private hasRun: number = 0;
-    private carPos: Vec3 = new Vec3(0, 0, 1);
-    private redirect: boolean = false;
-    private rotationCar: Quat = new Quat();
-    private isRight: boolean = false;
-    private controllDirect;
-    private speedMeter: number = 0;
+    @property({ type: Node })
+    public temp: Node | null = null;
 
+    private run: boolean = false;
+    private hasRun: number = 0;
+    private redirect: boolean = false;
+    private isRight: boolean = false;
+    private ani;
 
     start() {
-        // Your initialization goes here.
         // input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
         // this.collider = this.node.getComponent(CapsuleCollider);
         this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
@@ -35,13 +30,12 @@ export class PlayerController extends Component {
         input.on(Input.EventType.KEY_UP, this.upKey, this);
         // this.collider.on('onCollisionStay', this.onCollision, this);
         // this.collider.on('onTriggerStay', this.onTriggerStay, this);
-        this.controllDirect = this.node.getChildByName("controllDirect");
         this.schedule(() => {
             // this.speedMeter > 0 && this.speedMeter < 180 ? this.speedMeter += this.run ? 10 : -10 : 0;
-            this.speed = ((57 - Math.round((this.clockwise.rotation.w * (180 / Math.PI)))) * 2) / 3;
             this.numberSpeed.getComponent(Label).string = ((57 - Math.round((this.clockwise.rotation.w * (180 / Math.PI)))) * 2).toFixed(0);
             // this.speedMeter.toFixed(0);
         }, 0.3);
+        // this.findPoint()
 
 
     }
@@ -55,7 +49,8 @@ export class PlayerController extends Component {
 
     onTouchStart(e) {
         this.run = true;
-        this.renderSpeed(this.run)
+        this.renderSpeed(this.run);
+
 
     }
     onTouchEnd(e) {
@@ -153,6 +148,8 @@ export class PlayerController extends Component {
     }
 
 
+
+
     powerSlide(isActive: boolean) {
         // tween for dift
         let t = this;
@@ -162,16 +159,22 @@ export class PlayerController extends Component {
         // Quat.fromAxisAngle(temp, Vec3.FORWARD, t.isRight ? 80 : -80);
         // Quat.fromEuler(temp, 0, t.isRight ? 70 : -70, 0);
         // temp.z += (t.isRight ? 70 : -70) * (Math.PI / 180);
-        if (isActive) {
-            tween(t.controllDirect)
-                .to(time, { eulerAngles: v3(0, 0, t.isRight ? 80 : -80) }, { easing: easing.linear })
-                .start()
+
+
+        // need more anaimation
+        if (isActive ) {
+            t.ani = tween(t.temp)
+                .to(time, { eulerAngles: v3(0, 0, t.isRight ? 50 : -50), position: v3(t.isRight ? -3 : 3, 0, 0) }, { easing: easing.linear })
+            t.ani.start();
         }
         else {
-            tween(t.controllDirect)
+            tween(t.temp)
                 .to(time, { eulerAngles: v3(0, 0, 0) }, { easing: easing.linear })
-                .start()
+                .start();
+            t.ani ? t.ani.stop() : 0;
         }
+
+
     }
 
     powerSpeed(isDeceleration: boolean) {
@@ -182,7 +185,7 @@ export class PlayerController extends Component {
     renderSpeed(isAccelerator) {
         // tween for meterspeed
         let t = this;
-        let time = 2;
+        let time = 1;
         if (isAccelerator) {
             tween(t.clockwise)
                 .to(time, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
@@ -200,19 +203,24 @@ export class PlayerController extends Component {
 
     update(deltaTime: number) {
         let t = this;
-        if (t.run || t.speed > 0) {
-            const movement = new Vec3();
-            // t.speed <= 40 ? t.speed += 0.05 : 0;
-            Vec3.multiplyScalar(movement, t.carPos, t.speed * deltaTime);
-            t.node.translate(movement);
-        }
+        // if (t.run || t.speed > 0) {
+        //     const movement = new Vec3();
+        //     Vec3.multiplyScalar(movement, t.carPos, t.speed * deltaTime);
+        //     t.node.translate(movement);
+        // }
+
 
         if (t.redirect) {
             // tween is better :))
             // Quat.fromAxisAngle(t.direct, Vec3.FORWARD, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
             // t.controllDirect.rotate(t.direct);
-            Quat.fromAxisAngle(t.rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
-            t.node.rotate(t.rotationCar);
+            // Quat.fromAxisAngle(t.rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
+            // t.node.rotate(t.rotationCar);
+            // const movement = t.temp.position.clone();
+            // let temp = movement.x > 3 || movement.x < -3 ? -0.01 : 0.01
+            // Vec3.multiplyScalar(movement, new Vec3(1, 0, 0), t.isRight ? temp * -1 : temp);
+            // t.controllDirect.translate(movement);
+
         }
 
     }
