@@ -3519,7 +3519,7 @@
     "propertyPath": [
       "_name"
     ],
-    "value": "5"
+    "value": "100"
   },
   {
     "__type__": "cc.TargetInfo",
