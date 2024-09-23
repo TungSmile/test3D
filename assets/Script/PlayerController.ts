@@ -214,7 +214,7 @@ export class PlayerController extends Component {
 
     update(deltaTime: number) {
         let t = this;
-        if (t.run) {
+        if (this.speed != 0) {
             const movement = new Vec3();
             Vec3.multiplyScalar(movement, Vec3.FORWARD, -((this.speed / 4) * deltaTime));
             t.node.translate(movement);
