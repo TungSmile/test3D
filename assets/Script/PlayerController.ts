@@ -12,16 +12,22 @@ export class PlayerController extends Component {
     public accelerator: Node | null = null;
     @property({ type: Node })
     public temp: Node | null = null;
+    @property({ type: Node })
+    public coll: Node | null = null;
 
     private run: boolean = false;
     private speed: number = 0;
     private redirect: boolean = false;
     private isRight: boolean = false;
-    private ani;
+    private ani: any;
+    private km: number;
+    private driff: boolean;
+    private smoothDriff: number = 5;
+
 
     start() {
-        let collider = this.node.getComponent(BoxCollider);
-        collider.on('onTriggerEnter', this.onTriggerStay, this);
+        let collider = this.coll.getComponent(BoxCollider);
+        // collider.on('onTriggerEnter', this.onTriggerStay, this);
         // this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
         // this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
         // this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
@@ -34,24 +40,60 @@ export class PlayerController extends Component {
             this.numberSpeed.getComponent(Label).string = this.speed.toFixed(0);
         }, 0.3);
 
-
     }
 
     private onCollision(event: ICollisionEvent) {
         console.log(event.type, event);
     }
     private onTriggerStay(event: ITriggerEvent) {
-        let t = this;
+        let t = this
+        // kiểu bật tắt ( tăng smooth) 
+        // let temp = event.otherCollider.node.name;
+        // switch (temp) {
+        //     case "l5":
+        //         t.smoothDriff = 5;
+        //         t.isRight = false;
+        //         t.driff = true
+        //         break;
+        //     case "l10":
+        //         t.smoothDriff = 10;
+        //         t.isRight = false;
+        //         t.driff = true
+        //         break;
+        //     case "r5":
+        //         t.smoothDriff = 5;
+        //         t.isRight = true;
+        //         t.driff = true
+        //         break;
+        //     case "r10":
+        //         t.smoothDriff = 10;
+        //         t.isRight = true;
+        //         t.driff = true
+        //         break;
+        //     case "r50":
+        //         t.smoothDriff = 50;
+        //         t.isRight = true;
+        //         t.driff = true
+        //         break;
+        //     // case "s":
+        //     //     t.driff = false;
+        //     //     break;
+        //     default:
+        //         t.driff = false;
+        //         console.log(t.node.rotation.y * Math.PI);
 
-        // let direct = new Quat;
-        // Quat.fromAxisAngle(direct, Vec3.UP, -(Math.PI / 180 * 3));
-        // t.node.rotate(direct);
+        //         break;
+        // }
+        // kiểu lấy dữ liệu từ point
         let temp = Number(event.otherCollider.node.name);
-        tween(t.node).by(0.5, {
-            eulerAngles: v3(0, -temp, 0)
+        tween(t.node).to(0.1, {
+            eulerAngles: v3(0, temp, 0)
         }, { easing: easing.linear })
+            .call(() => {
+            })
             .start()
-        console.log("va");
+
+
 
     }
 
@@ -174,7 +216,7 @@ export class PlayerController extends Component {
             t.ani = tween(t.temp)
                 .to(time, {
                     eulerAngles: v3(0, 0, t.isRight ? 50 : -50)
-                    , position: v3(t.isRight ? -10 : 10, 0, 0)
+                    // , position: v3(t.isRight ? -10 : 10, 0, 0)
                 }, { easing: easing.linear })
             t.ani.start();
         }
@@ -216,24 +258,31 @@ export class PlayerController extends Component {
         let t = this;
         if (this.speed != 0) {
             const movement = new Vec3();
-            Vec3.multiplyScalar(movement, Vec3.FORWARD, -((this.speed / 4) * deltaTime));
+            this.km += (this.speed / 5) * deltaTime;
+            Vec3.multiplyScalar(movement, Vec3.FORWARD, -((this.speed / 5) * deltaTime));
             t.node.translate(movement);
         }
 
 
-        // if (t.redirect) {
-        //     // tween is better :))
-        //     let direct = new Quat;
-        //     let rotationCar = new Quat;
-        //     Quat.fromAxisAngle(direct, Vec3.FORWARD, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
-        //     t.temp.rotate(direct);
-        //     Quat.fromAxisAngle(rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
-        //     t.node.rotate(rotationCar);
-        //     // const movement = t.temp.position.clone();
-        //     // let temp = movement.x > 3 || movement.x < -3 ? -0.01 : 0.01
-        //     // Vec3.multiplyScalar(movement, new Vec3(1, 0, 0), t.isRight ? temp * -1 : temp);
-        //     // t.controllDirect.translate(movement);
+        if (t.redirect) {
+            // tween is better :))
+            let direct = new Quat;
+            let rotationCar = new Quat;
+            let d = t.speed > 60 ? 1 : 2;
+            // Quat.fromAxisAngle(direct, Vec3.FORWARD, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
+            // t.temp.rotate(direct);
+            Quat.fromAxisAngle(rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) / d : ((deltaTime * 100) * Math.PI / 180) / d);
+            t.node.rotate(rotationCar);
+            // const movement = t.temp.position.clone();
+            // let temp = movement.x > 3 || movement.x < -3 ? -0.01 : 0.01
+            // Vec3.multiplyScalar(movement, new Vec3(1, 0, 0), t.isRight ? temp * -1 : temp);
+            // t.controllDirect.translate(movement);
+        }
 
+        // if (t.driff && this.speed != 0) {
+        //     let direct = new Quat;
+        //     Quat.fromAxisAngle(direct, new Vec3(0, 1, 0), t.isRight ? ((-deltaTime * t.smoothDriff) * Math.PI / 180) : ((deltaTime * t.smoothDriff) * Math.PI / 180));
+        //     t.node.rotate(direct);
         // }
 
     }
