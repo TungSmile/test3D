@@ -29,7 +29,7 @@ export class GameManager extends Component {
         let t = this;
         t.isPlayer ? t.addEvent() : 0;
         t.coll = t.Player.getChildByName("coll").getComponent(BoxCollider);
-        t.coll.on('onTriggerEnter', this.goToPoint, this);
+        // t.coll.on('onTriggerEnter', this.goToPoint, this);
     }
 
     addEvent() {
