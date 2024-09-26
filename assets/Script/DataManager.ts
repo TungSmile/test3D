@@ -15,6 +15,10 @@ export class DataManager extends Component {
         return this.getInstance<DataManager>()
     }
 
-    currentPoin: number = 10;
+    public isRun: boolean = false;
+    public speed: number = 30;
+    public redirect: boolean = false;
+    public isTurnRight: boolean = false;
+
 }
 

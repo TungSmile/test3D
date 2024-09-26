@@ -14,7 +14,7 @@ export class CamFollow extends Component {
     height: number = 2;
 
     @property
-    smoothness: number = 0.05;
+    smoothness: number = 0.1;
 
     @property
     offsetX: number = 0;
