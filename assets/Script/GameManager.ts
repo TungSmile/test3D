@@ -1,4 +1,4 @@
-import { _decorator, BoxCollider, CCInteger, Component, input, easing, Input, instantiate, log, Node, Prefab, Tween, tween, v3, Vec3, Label } from 'cc';
+import { _decorator, BoxCollider, CCInteger, Component, input, easing, Input, instantiate, log, Node, Prefab, Tween, tween, v3, Vec3, Label, EventKeyboard, KeyCode } from 'cc';
 import { DataManager } from './DataManager';
 const { ccclass, property } = _decorator;
 
@@ -45,10 +45,76 @@ export class GameManager extends Component {
         t.goHead.on(Input.EventType.TOUCH_END, t.notRun, this);
         t.goHead.on(Input.EventType.TOUCH_CANCEL, t.notRun, this);
         t.goHead.on(Input.EventType.TOUCH_MOVE, t.notRun, this);
-        // input.on(Input.EventType.KEY_DOWN, t.Run, this);
-        // input.on(Input.EventType.KEY_UP, t.notRun, this);
+        // input.on(Input.EventType.KEY_DOWN, t.downKey, this);
+        // input.on(Input.EventType.KEY_UP, t.upKey, this);
         // t.coll = t.Player.getChildByName("coll").getComponent(BoxCollider);
         // t.coll.on('onTriggerEnter', this.goToPoint, this);
+    }
+    downKey(event: EventKeyboard) {
+        let t = this;
+        switch (event.keyCode) {
+            case KeyCode.ARROW_LEFT:
+
+                break;
+            case KeyCode.ARROW_RIGHT:
+
+                break;
+            case KeyCode.ARROW_UP:
+                DataManager.instance.isRun = true
+                // this.speedMeter == 180 ? 0 : t.speedMeter += 10;
+                break;
+            case KeyCode.ARROW_DOWN:
+                DataManager.instance.isRun = false
+                break;
+            case KeyCode.KEY_A:
+
+                // t.ani.play("turnLeft");
+                break;
+            case KeyCode.KEY_D:
+
+                // t.ani.play("turnRight");
+                break;
+            case KeyCode.KEY_W:
+                DataManager.instance.isRun = true
+                // this.speedMeter == 180 ? 0 : t.speedMeter += 10;
+                break;
+            case KeyCode.KEY_S:
+                DataManager.instance.isRun = false
+                break;
+            default:
+                DataManager.instance.isRun = false
+                break;
+        }
+        t.animationSpeedMile();
+    }
+
+    upKey(event: EventKeyboard) {
+        // tween for brake but no idea
+        let t = this;
+        switch (event.keyCode) {
+            case KeyCode.ARROW_LEFT:
+                break;
+            case KeyCode.ARROW_RIGHT:
+                break;
+            case KeyCode.ARROW_UP:
+                DataManager.instance.isRun = false
+                // this.speedMeter == 0 ? 0 : t.speedMeter -= 10;
+                break;
+            case KeyCode.ARROW_DOWN:
+                DataManager.instance.isRun = false
+                // this.speedMeter == 0 ? 0 : t.speedMeter -= 10;
+                break;
+            case KeyCode.KEY_A:
+                break;
+            case KeyCode.KEY_D:
+                break;
+            default:
+                DataManager.instance.isRun = false
+                // this.speedMeter == 0 ? 0 : t.speedMeter -= 10;
+
+                break;
+        }
+        t.animationSpeedMile();
     }
 
 
@@ -92,7 +158,6 @@ export class GameManager extends Component {
             })
             .start();
 
-        console.log("a");
 
     }
     // set stating point
@@ -111,9 +176,9 @@ export class GameManager extends Component {
         if (DataManager.instance.isRun) {
             tween(t.wise)
                 .to(time / 2, { eulerAngles: v3(0, 0, -130) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 70; })
+                .call(() => { DataManager.instance.speed = 50; })
                 .to(time / 2, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 90; })
+                .call(() => { DataManager.instance.speed = 60; })
                 .to(time / 10, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
                 .to(time / 10, { eulerAngles: v3(0, 0, -250) }, { easing: easing.linear })
                 .start();

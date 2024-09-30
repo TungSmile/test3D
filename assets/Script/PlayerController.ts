@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Quat, EventKeyboard, KeyCode, ICollisionEvent, ITriggerEvent, tween, easing, v3, Label, BoxCollider } from 'cc';
+import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Quat, EventKeyboard, KeyCode, ICollisionEvent, ITriggerEvent, tween, easing, v3, Label, BoxCollider, Tween, TweenAction } from 'cc';
 import { DataManager } from './DataManager';
 const { ccclass, property } = _decorator;
 
@@ -21,21 +21,36 @@ export class PlayerController extends Component {
     private redirect: boolean = false;
     private isRight: boolean = false;
     private ani: any;
-    private km: number;
+    private km: number = 0;
     private driff: boolean;
     private smoothDriff: number = 5;
+    private animation;
+    private angles: number = 0;
+    private countAngles: number = 0;
+    private newAngles: boolean = false;
+    @property({ type: Node })
+    public tempMap: Node | null = null;
 
 
 
 
+
+    @property({ type: Node })
+    public postest1: Node | null = null;
+    @property({ type: Node })
+    public postest2: Node | null = null;
+    @property({ type: Node })
+    public postest3: Node | null = null;
+    private speedTest: number = 0.5;
     start() {
-
         let t = this;
+        t.animation = tween(t.node);
+        // t.createTween()
         t.coll.getComponent(BoxCollider).on('onTriggerEnter', this.onTriggerEnter, t)
-        // this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
-        // this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
-        // this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
-        // this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
         // input.on(Input.EventType.KEY_DOWN, this.downKey, this);
         // input.on(Input.EventType.KEY_UP, this.upKey, this);
 
@@ -43,6 +58,9 @@ export class PlayerController extends Component {
         //     this.speed = ((57 - Math.round((this.clockwise.rotation.w * (180 / Math.PI)))) * 2)
         //     this.numberSpeed.getComponent(Label).string = this.speed.toFixed(0);
         // }, 0.3);
+
+
+
 
     }
 
@@ -57,38 +75,109 @@ export class PlayerController extends Component {
 
     }
     private onTriggerEnter(event: ITriggerEvent) {
+        // đổi góc khi di chuyển
         let t = this;
-        console.log("??");
+        // let angles = Number(event.otherCollider.node.name);
+        console.log("goc con :" + t.countAngles);
+        t.angles = Number(event.otherCollider.node.name);
+        t.countAngles = t.angles;
+        console.log("goc :" + t.angles);
 
-        let angles = event.otherCollider.node.rotation.y
-        t.node.rotate(Quat.fromEuler(new Quat(), 0, 1 * 0.015, 0), Node.NodeSpace.LOCAL);
+
+
+        // t.node.rotate(Quat.fromEuler(new Quat(), 0, angles, 0), Node.NodeSpace.LOCAL);
+
+    }
+
+    private enterCollider(event: ITriggerEvent) {
+        let t = this;
+        t.km++;
+        // t.createTween();
+    }
+
+    private createTween() {
+        let t = this;
+        // let next = t.tempMap.getChildByName(t.km.toString());
+        // // if (!next) return;
+        // let posPM = next.position;
+        // // let rosPM = next.rotation;
+        // let time = (Math.abs(t.node.position.z - posPM.z)) / 30;
+        // // let a = 
+        // t.animation
+        //     .to(time, { position: posPM })
+        //     .start()
+
+        // // t.animation.then(a).start();
+        // console.log(t.animation._actions);
+        let tw = tween(t.node)
+        let time;
+        for (let i = t.km + 1; i < t.tempMap.children.length; i++) {
+            const e = t.tempMap.getChildByName(i.toString());
+            const e1 = t.tempMap.getChildByName((i + 1).toString());
+            let pos = e.position;
+            if (i == t.km) {
+                time = ((Math.abs(t.node.position.z - pos.z)) + (Math.abs(t.node.position.x - pos.x))) / 80
+                tw.to(time, { position: pos }, { easing: easing.linear })
+            } else if (e1) {
+                time = ((Math.abs(t.node.position.z - pos.z)) + (Math.abs(t.node.position.x - pos.x))) / 120
+                tw.to(time, { position: pos }, { easing: easing.linear })
+            }
+            // console.log("name" + e.name, e1.name);
+            console.log("time : " + time);
+
+        }
+        tw.start()
+
+    }
+    test() {
+        let t = this;
+        // let distance = Vec3.distance(t.taggetNode.position, t.taggetNode1.position)s
+        // console.log(distance);
+        let temp = t.postest3.position.clone();
+        let distance = temp.subtract(t.postest2.position);
+
+        let check = temp.dot(t.postest1.position)
+        if (check > 0.01) {
+            console.log('done');
+        }
+        let direction = distance.normalize();
+        let moveDistance = 0.01;
+        t.node.position = t.node.position.add(direction.multiplyScalar(t.speedTest));
+
+
 
     }
 
     onTouchStart(e) {
-        this.run = true;
-        DataManager.instance.isRun = true
-
-        // this.renderSpeed(this.run);
-
+        // this.run = true;
+        // DataManager.instance.isRun = true;
+        // this.renderSpeed(this.run);\
+        // this.animation.start();
+        // this.createTween();
+        // this.test()
     }
     onTouchEnd(e) {
-        this.run = false;
-        DataManager.instance.isRun = false
-
+        // this.run = false;
+        // DataManager.instance.isRun = false
         // this.renderSpeed(this.run)
+        // Tween.stopAllByTarget(this.node)
+        // this.test()
 
     }
     onTouchCancel(e) {
-        this.run = false;
-        DataManager.instance.isRun = false
+        // this.run = false;
+        // DataManager.instance.isRun = false
         // this.renderSpeed(this.run)
+        // Tween.stopAllByTarget(this.node)
+        // this.test()
 
     }
     onTouchMove(e) {
-        this.run = false;
-        DataManager.instance.isRun = false
+        // this.run = false;
+        // DataManager.instance.isRun = false
         // this.renderSpeed(this.run)
+        // Tween.stopAllByTarget(this.node)
+        // this.test()
 
     }
 
@@ -234,35 +323,54 @@ export class PlayerController extends Component {
     // }
 
 
-
     update(deltaTime: number) {
         let t = this;
+        // if (DataManager.instance.isRun) {
+        //     const movement = new Vec3();
+        //     Vec3.multiplyScalar(movement, Vec3.FORWARD, -((DataManager.instance.speed) * 0.015));
+        //     t.node.translate(movement);
+        //     if (t.countAngles != 0) {
+        //         let a = t.countAngles - 0.5
+        //         //  t.angles * 0.0005 * DataManager.instance.speed;
+        //         let b = parseFloat(a.toFixed(3));
+        //         t.countAngles = b;
+        //         console.log(t.countAngles);
+        //         t.node.rotate(Quat.fromEuler(new Quat(), 0, 0.5, 0), Node.NodeSpace.LOCAL);
+        //         t.newAngles = false;
+        //     }
+        // }
+
         if (DataManager.instance.isRun) {
-            const movement = new Vec3();
-            Vec3.multiplyScalar(movement, Vec3.FORWARD, -((DataManager.instance.speed) * deltaTime));
-            t.node.translate(movement);
+
+            let temp = t.postest3.position.clone();
+            let distance = temp.subtract(t.postest2.position);
+            // console.log("dis" + distance);
+            let direction = distance.normalize();
+            // console.log("dir" + direction);
+            let moveDistance = 0.01;
+            t.node.position = t.node.position.add(direction.multiplyScalar(t.speedTest));
         }
 
-
-        if (t.redirect) {
-            // let direct = new Quat;
-            let rotationCar = new Quat;
-            let d = t.speed > 60 ? 1 : 2;
-            // Quat.fromAxisAngle(direct, Vec3.FORWARD, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
-            // t.temp.rotate(direct);
-            Quat.fromAxisAngle(rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) / d : ((deltaTime * 100) * Math.PI / 180) / d);
-            t.node.rotate(rotationCar);
-            // const movement = t.temp.position.clone();
-            // let temp = movement.x > 3 || movement.x < -3 ? -0.01 : 0.01
-            // Vec3.multiplyScalar(movement, new Vec3(1, 0, 0), t.isRight ? temp * -1 : temp);
-            // t.controllDirect.translate(movement);
-        }
+        // if (t.redirect) {
+        //     // let direct = new Quat;
+        //     let rotationCar = new Quat;
+        //     let d = t.speed > 60 ? 1 : 2;
+        //     // Quat.fromAxisAngle(direct, Vec3.FORWARD, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
+        //     // t.temp.rotate(direct);
+        //     Quat.fromAxisAngle(rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) / d : ((deltaTime * 100) * Math.PI / 180) / d);
+        //     t.node.rotate(rotationCar);
+        //     // const movement = t.temp.position.clone();
+        //     // let temp = movement.x > 3 || movement.x < -3 ? -0.01 : 0.01
+        //     // Vec3.multiplyScalar(movement, new Vec3(1, 0, 0), t.isRight ? temp * -1 : temp);
+        //     // t.controllDirect.translate(movement);
+        // }
 
         // if (t.driff && this.speed != 0) {
         //     let direct = new Quat;
         //     Quat.fromAxisAngle(direct, new Vec3(0, 1, 0), t.isRight ? ((-deltaTime * t.smoothDriff) * Math.PI / 180) : ((deltaTime * t.smoothDriff) * Math.PI / 180));
         //     t.node.rotate(direct);
         // }
+
 
     }
 }
