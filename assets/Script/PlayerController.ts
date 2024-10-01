@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Quat, EventKeyboard, KeyCode, ICollisionEvent, ITriggerEvent, tween, easing, v3, Label, BoxCollider, Tween, TweenAction } from 'cc';
+import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Quat, EventKeyboard, KeyCode, ICollisionEvent, ITriggerEvent, tween, easing, v3, Label, BoxCollider, Tween, TweenAction, Font, Collider } from 'cc';
 import { DataManager } from './DataManager';
 const { ccclass, property } = _decorator;
 
@@ -35,29 +35,34 @@ export class PlayerController extends Component {
 
 
 
-    @property({ type: Node })
-    public postest1: Node | null = null;
-    @property({ type: Node })
-    public postest2: Node | null = null;
-    @property({ type: Node })
-    public postest3: Node | null = null;
+    // @property({ type: Node })
+    // public postest1: Node | null = null;
+    // @property({ type: Node })
+    // public postest2: Node | null = null;
+    // @property({ type: Node })
+    // public postest3: Node | null = null;
     private speedTest: number = 0.5;
+
+
+
+    @property({ type: Node })
+    public front: Node | null = null;
+    @property({ type: Node })
+    public back: Node | null = null;
+
     start() {
         let t = this;
         t.animation = tween(t.node);
         // t.createTween()
-        t.coll.getComponent(BoxCollider).on('onTriggerEnter', this.onTriggerEnter, t)
+        t.coll.getComponent(BoxCollider).on('onTriggerEnter', this.onColliderEnter, t)
         this.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
-        this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        this.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this); ``
         this.accelerator.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
         this.accelerator.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
         // input.on(Input.EventType.KEY_DOWN, this.downKey, this);
         // input.on(Input.EventType.KEY_UP, this.upKey, this);
 
-        // this.schedule(() => {
-        //     this.speed = ((57 - Math.round((this.clockwise.rotation.w * (180 / Math.PI)))) * 2)
-        //     this.numberSpeed.getComponent(Label).string = this.speed.toFixed(0);
-        // }, 0.3);
+
 
 
 
@@ -74,25 +79,33 @@ export class PlayerController extends Component {
 
 
     }
-    private onTriggerEnter(event: ITriggerEvent) {
+    private onColliderEnter(event: ITriggerEvent) {
         // đổi góc khi di chuyển
         let t = this;
         // let angles = Number(event.otherCollider.node.name);
-        console.log("goc con :" + t.countAngles);
-        t.angles = Number(event.otherCollider.node.name);
-        t.countAngles = t.angles;
-        console.log("goc :" + t.angles);
-
-
-
+        // console.log("goc con :" + t.countAngles);
+        // t.angles = Number(event.otherCollider.node.name);
+        // t.countAngles = t.angles;
+        // console.log("goc :" + t.angles);`    
+        // tween(t.node).to()
         // t.node.rotate(Quat.fromEuler(new Quat(), 0, angles, 0), Node.NodeSpace.LOCAL);
+        // t.back = t.tempMap.getChildByName(t.km.toString());
+        // console.log(t.back.name);
+        t.km++;
+        // t.front = t.tempMap.getChildByName(t.km.toString());
+        // console.log(t.front.name);
+        // t.angleY = event.otherCollider.node.eulerAngles.y - t.angleY;
+        console.log("?" + t.km);
+        console.log("angle" + t.node.rotation);
 
+
+
+        t.node.rotate(Quat.fromEuler(new Quat(), 0, 5, 0), Node.NodeSpace.LOCAL);
     }
 
     private enterCollider(event: ITriggerEvent) {
         let t = this;
         t.km++;
-        // t.createTween();
     }
 
     private createTween() {
@@ -106,7 +119,6 @@ export class PlayerController extends Component {
         // t.animation
         //     .to(time, { position: posPM })
         //     .start()
-
         // // t.animation.then(a).start();
         // console.log(t.animation._actions);
         let tw = tween(t.node)
@@ -122,31 +134,11 @@ export class PlayerController extends Component {
                 time = ((Math.abs(t.node.position.z - pos.z)) + (Math.abs(t.node.position.x - pos.x))) / 120
                 tw.to(time, { position: pos }, { easing: easing.linear })
             }
-            // console.log("name" + e.name, e1.name);
-            console.log("time : " + time);
-
         }
         tw.start()
 
     }
-    test() {
-        let t = this;
-        // let distance = Vec3.distance(t.taggetNode.position, t.taggetNode1.position)s
-        // console.log(distance);
-        let temp = t.postest3.position.clone();
-        let distance = temp.subtract(t.postest2.position);
 
-        let check = temp.dot(t.postest1.position)
-        if (check > 0.01) {
-            console.log('done');
-        }
-        let direction = distance.normalize();
-        let moveDistance = 0.01;
-        t.node.position = t.node.position.add(direction.multiplyScalar(t.speedTest));
-
-
-
-    }
 
     onTouchStart(e) {
         // this.run = true;
@@ -322,33 +314,42 @@ export class PlayerController extends Component {
 
     // }
 
+    private angleY = 148;
+    testDrive() {
+        let t = this;
+        let front = t.tempMap.getChildByName((t.km + 1).toString());
+        let back = t.tempMap.getChildByName(t.km.toString());
+
+        // let angle = front.eulerAngles.y - t.node.eulerAngles.y;
+        // let dis = Vec3.distance(front.position, t.node.position);
+        // console.log("goc :" + angle, "km " + dis, "ang/km :" + (angle / Number(dis.toFixed(3))).toFixed(3));
+
+
+
+        // t.temp.rotate(Quat.fromEuler(new Quat(), 0, 5, 0), Node.NodeSpace.LOCAL);
+
+        let temp = front.position.clone();
+        let distance = temp.subtract(back.position);
+        let direction = distance.normalize();
+        t.node.position = t.node.position.add(direction.multiplyScalar(DataManager.instance.speed));
+    }
 
     update(deltaTime: number) {
         let t = this;
-        // if (DataManager.instance.isRun) {
-        //     const movement = new Vec3();
-        //     Vec3.multiplyScalar(movement, Vec3.FORWARD, -((DataManager.instance.speed) * 0.015));
-        //     t.node.translate(movement);
-        //     if (t.countAngles != 0) {
-        //         let a = t.countAngles - 0.5
-        //         //  t.angles * 0.0005 * DataManager.instance.speed;
-        //         let b = parseFloat(a.toFixed(3));
-        //         t.countAngles = b;
-        //         console.log(t.countAngles);
-        //         t.node.rotate(Quat.fromEuler(new Quat(), 0, 0.5, 0), Node.NodeSpace.LOCAL);
-        //         t.newAngles = false;
-        //     }
-        // }
-
         if (DataManager.instance.isRun) {
-
-            let temp = t.postest3.position.clone();
-            let distance = temp.subtract(t.postest2.position);
-            // console.log("dis" + distance);
-            let direction = distance.normalize();
-            // console.log("dir" + direction);
-            let moveDistance = 0.01;
-            t.node.position = t.node.position.add(direction.multiplyScalar(t.speedTest));
+            // const movement = new Vec3();
+            // Vec3.multiplyScalar(movement, Vec3.FORWARD, -((DataManager.instance.speed) * 0.015));
+            // t.node.translate(movement);
+            // if (t.countAngles != 0) {
+            //     let a = t.countAngles - 0.5
+            //     //  t.angles * 0.0005 * DataManager.instance.speed;
+            //     let b = parseFloat(a.toFixed(3));
+            //     t.countAngles = b;
+            //     console.log(t.countAngles);
+            //     t.node.rotate(Quat.fromEuler(new Quat(), 0, 0.5, 0), Node.NodeSpace.LOCAL);
+            //     t.newAngles = false;
+            // }
+            t.testDrive();
         }
 
         // if (t.redirect) {

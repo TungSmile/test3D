@@ -176,16 +176,16 @@ export class GameManager extends Component {
         if (DataManager.instance.isRun) {
             tween(t.wise)
                 .to(time / 2, { eulerAngles: v3(0, 0, -130) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 50; })
+                .call(() => { DataManager.instance.speed = 0.6; })
                 .to(time / 2, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 60; })
+                .call(() => { DataManager.instance.speed = 1; })
                 .to(time / 10, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
                 .to(time / 10, { eulerAngles: v3(0, 0, -250) }, { easing: easing.linear })
                 .start();
         } else {
             tween(t.wise)
                 .to(time, { eulerAngles: v3(0, 0, 0) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 30; })
+                .call(() => { DataManager.instance.speed = 0.3; })
                 .start();
 
         }
