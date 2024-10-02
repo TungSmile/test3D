@@ -16,7 +16,7 @@ export class DataManager extends Component {
     }
 
     public isRun: boolean = false;
-    public speed: number = 0.3;
+    public speed: number = 0.01;
     public redirect: boolean = false;
     public isTurnRight: boolean = false;
 
