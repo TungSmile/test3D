@@ -37,8 +37,8 @@ export class PlayerController extends Component {
         t.animation = tween(t.node);
         // t.createTween()
         if (t.coll) {
-            t.coll.getComponent(RigidBody).useCCD = true;
-            t.coll.getComponent(BoxCollider).on('onTriggerEnter', this.onColliderEnter, t)
+            // t.coll.getComponent(RigidBody).useCCD = true;
+            // t.coll.getComponent(BoxCollider).on('onTriggerEnter', this.onColliderEnter, t)
         }
         t.accelerator.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
         t.accelerator.on(Input.EventType.TOUCH_END, this.onTouchEnd, this); ``
@@ -51,7 +51,7 @@ export class PlayerController extends Component {
 
         t.schedule(() => {
             t.Drive()
-        }, 0.001)
+        }, 0.005)
 
 
     }
@@ -72,6 +72,7 @@ export class PlayerController extends Component {
     private onColliderEnter(event: ITriggerEvent) {
         let t = this;
         t.km++;
+        // t.node.position = event.otherCollider.node.position;
         if ((t.km + 1) >= t.tempMap.children.length) {
             t.brake = true;
             return;
@@ -90,34 +91,50 @@ export class PlayerController extends Component {
     }
     Drive() {
         let t = this;
-        // let frontv3 = front.rotation.getEulerAngles(new Vec3);
-        // let angle = front.eulerAngles.y - t.node.eulerAngles.y;
         if (!DataManager.instance.isRun || t.brake) return;
         let temp = t.front.position.clone();
         let distance = temp.subtract(t.back.position);
         let direction = distance.normalize();
-        // tổng quãng đường 
-        let dis1 = Number(Vec3.distance(t.front.position, t.back.position).toFixed(0));
-        // quãng đi được
-        let dis2 = Number(Vec3.distance(t.front.position, t.node.position).toFixed(0));
-        let per = (Number(dis2.toFixed(0)) / Number(dis1.toFixed(0))).toFixed(2);
-        let per2 = t.angleY - Number(per) * t.angleY
-        // console.log('di dc :' + dis2.toFixed(0) + "/" + dis1.toFixed(0) + "=" + per + "=" + per2.toFixed(1));
-        if (per2 >= 0) {
-            // xoay góc tính theo đoạn đường đi
-            let angle = (t.back.eulerAngles.y + per2) * Math.PI / 180;
-            t.node.rotation = Quat.fromAxisAngle(new Quat(), Vec3.UNIT_Y, angle);
 
+        // // tổng quãng đường 
+        // let dis1 = Number(Vec3.distance(t.front.position, t.back.position).toFixed(0));
+        // // quãng đi được
+        // let dis2 = Number(Vec3.distance(t.front.position, t.node.position).toFixed(0));
+        // let per = (Number(dis2.toFixed(0)) / Number(dis1.toFixed(0))).toFixed(2);
+        // let per2 = t.angleY - Number(per) * t.angleY;
+        // if (Number(per2.toFixed(2)) == 0) {
+        //     // xoay góc tính theo đoạn đường đi
+        //     let angle = (t.back.eulerAngles.y + per2) * Math.PI / 180;
+        //     t.node.rotation = Quat.fromAxisAngle(new Quat(), Vec3.UNIT_Y, angle);
+        // }
+        let a1 = t.node.position.clone()
+        let a = Vec3.lengthSqr(a1.subtract(t.front.position))
+        console.log(a);
+
+        if (a < 0.05) {
+            t.node.position = t.front.position;
+            console.log("d"+t.front.name);
+
+            t.km++;
+            if ((t.km + 1) >= t.tempMap.children.length) {
+                t.brake = true;
+                return;
+            }
+            t.front = t.tempMap.children[t.km + 1];
+            t.back = t.tempMap.children[t.km];
+
+
+        } else {
+            t.node.position = t.node.position.add(direction.multiplyScalar(
+                DataManager.instance.speed
+            ));
         }
 
-        // if (t.angleY != 0) {
-        //     t.node.rotate(Quat.fromEuler(new Quat(), 0, 0.1, 0), Node.NodeSpace.LOCAL);
-        //     t.angleY = Number((t.angleY - 0.1).toFixed(1))
-        //     console.log(t.angleY);
-        // } else {
-        //     console.log("done :" + t.front.name);
-        // }
-        t.node.position = t.node.position.add(direction.multiplyScalar(DataManager.instance.speed));
+
+
+
+
+        // console.log(t.node.ro);
 
     }
 

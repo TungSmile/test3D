@@ -185,7 +185,7 @@ export class GameManager extends Component {
         } else {
             tween(t.wise)
                 .to(time, { eulerAngles: v3(0, 0, 0) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 0.01; })
+                .call(() => { DataManager.instance.speed = 0.05; })
                 .start();
 
         }
