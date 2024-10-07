@@ -1,4 +1,4 @@
-import { _decorator, Component, EventMouse, Input, input, Node, Vec3, Quat, EventKeyboard, KeyCode, ICollisionEvent, ITriggerEvent, tween, easing, v3, Label, BoxCollider, Tween, TweenAction, Font, Collider, log, RigidBody } from 'cc';
+import { _decorator, Component, Input, Node, Vec3, Quat, EventKeyboard, KeyCode, ICollisionEvent, ITriggerEvent, tween, easing, v3, Label, BoxCollider, Tween, Font, Collider, RigidBody, misc, log } from 'cc';
 import { DataManager } from './DataManager';
 const { ccclass, property } = _decorator;
 
@@ -34,7 +34,7 @@ export class PlayerController extends Component {
 
     start() {
         let t = this;
-        t.animation = tween(t.node);
+        // t.animation = tween(t.node);
         // t.createTween()
         if (t.coll) {
             // t.coll.getComponent(RigidBody).useCCD = true;
@@ -49,9 +49,9 @@ export class PlayerController extends Component {
         t.front = t.tempMap.children[t.km + 1];
         t.back = t.tempMap.children[t.km];
 
-        t.schedule(() => {
-            t.Drive()
-        }, 0.005)
+        // t.schedule(() => {
+        //     t.Drive()
+        // }, 0.005)
 
 
     }
@@ -61,10 +61,6 @@ export class PlayerController extends Component {
     }
     private onTriggerStay(event: ITriggerEvent) {
         let t = this;
-
-
-
-
     }
     private angleY = 0;
     private totalDis: number;
@@ -72,21 +68,22 @@ export class PlayerController extends Component {
     private onColliderEnter(event: ITriggerEvent) {
         let t = this;
         t.km++;
+
         // t.node.position = event.otherCollider.node.position;
-        if ((t.km + 1) >= t.tempMap.children.length) {
-            t.brake = true;
-            return;
-        }
-        t.front = t.tempMap.children[t.km + 1];
-        t.back = t.tempMap.children[t.km];
+        // if ((t.km + 1) >= t.tempMap.children.length) {
+        //     t.brake = true;
+        //     return;
+        // }
+        // t.front = t.tempMap.children[t.km + 1];
+        // t.back = t.tempMap.children[t.km];
         // Chuyển đổi độ sang radian
         // const angle = t.back.eulerAngles.y * Math.PI / 180;
         // t.node.rotation = Quat.fromAxisAngle(new Quat(), Vec3.UNIT_Y, angle);
         // t.node.rotation = t.back.rotation;
         // t.node.position = t.back.position;
-        t.angleY = t.front.eulerAngles.y - t.back.eulerAngles.y;
-        t.totalDis = Vec3.distance(t.front.position, t.back.position);
-        console.log("angle :" + t.angleY);
+        // t.angleY = t.front.eulerAngles.y - t.back.eulerAngles.y;
+        // t.totalDis = Vec3.distance(t.front.position, t.back.position);
+        // console.log("angle :" + t.angleY);
 
     }
     Drive() {
@@ -95,7 +92,6 @@ export class PlayerController extends Component {
         let temp = t.front.position.clone();
         let distance = temp.subtract(t.back.position);
         let direction = distance.normalize();
-
         // // tổng quãng đường 
         // let dis1 = Number(Vec3.distance(t.front.position, t.back.position).toFixed(0));
         // // quãng đi được
@@ -113,8 +109,7 @@ export class PlayerController extends Component {
 
         if (a < 0.05) {
             t.node.position = t.front.position;
-            console.log("d"+t.front.name);
-
+            console.log("d" + t.front.name);
             t.km++;
             if ((t.km + 1) >= t.tempMap.children.length) {
                 t.brake = true;
@@ -122,21 +117,105 @@ export class PlayerController extends Component {
             }
             t.front = t.tempMap.children[t.km + 1];
             t.back = t.tempMap.children[t.km];
-
-
         } else {
             t.node.position = t.node.position.add(direction.multiplyScalar(
                 DataManager.instance.speed
             ));
         }
-
-
-
-
-
         // console.log(t.node.ro);
+    }
+
+
+
+    testBezier() {
+        let t = this;
+        let baseTime = 20; // Adjust this base value as needed (ms)
+        t.km++;
+        t.front = t.tempMap.children[t.km + 1];
+        t.back = t.tempMap.children[t.km];
+        if ((t.km + 1) >= t.tempMap.children.length) {
+            return;
+        }
+
+
+        let a1 = t.back.position.clone();
+        let distance = Vec3.lengthSqr(a1.subtract(t.front.position)); // Calculate distance
+
+        // Consider a minimum time for smoother transitions at short distances
+        let minTime = Math.max(baseTime * 0.1, 5); // Adjust minimum time as desired (ms)
+
+        // Calculate time based on distance, ensuring a minimum
+        let time = Math.max(minTime, baseTime * (distance / 100)); // Adjust factor based on desired time-distance relationship
+
+        console.log("cu ly: " + distance + " tu " + t.back.name + "-" + t.front.name);
+
+
+        // Use a custom easing function for smoother animation (optional)
+        let easingCustom = (t) => t * t * (3 - 2 * t); // Example easing function (modify as needed)
+
+        tween(t.node)
+            .to(time / 100, { position: t.front.position, rotation: t.front.rotation })
+            .call(() => {
+                t.testBezier();
+            })
+            .start();
+    }
+
+
+    testSequence() {
+        let t = this;
+        let temp = tween(t.node);
+        let baseTime = 20;
+        if ((t.km + 1) >= t.tempMap.children.length) {
+            return;
+        } else {
+            for (let i = t.km; i + 1 < t.tempMap.children.length; i++) {
+                let back = t.tempMap.children[i];
+                let front = t.tempMap.children[i + 1];
+                let eas = easing.linear;
+                if (i == t.km) {
+                    back = t.node
+                    // eas = easing.sineIn
+                }
+                // let a1 = back.position.clone();
+                let distance = Vec3.distance(front.worldPosition, back.worldPosition);
+                let minTime = Math.max(baseTime * 0.1, 5);
+                let time = Math.max(minTime, baseTime * (distance / 10));
+                console.log("point :" + back.name + "-" + front.name + " dis :" + distance.toFixed(1));
+                let fakeTween = tween(t.node)
+                    .to(time / 100, { position: front.position, rotation: front.rotation }, { easing: eas })
+                    .call(() => {
+                        t.km++;
+                    })
+                temp.then(fakeTween)
+            }
+            temp.start();
+            console.log(temp);
+
+
+
+        }
+
+
+        // tween(t.node)
+        //     .sequence(temp)
+        //     .start();
 
     }
+
+    calculateControlPoint(start, end, angle) {
+        // Tính toán vector hướng từ start đến end
+        let direction = end.subtract(start).normalize();
+
+        // Tính toán vector vuông góc với direction, lệch góc angle
+        let normal = direction.clone().rotateY(misc.degreesToRadians(angle));
+
+        // Tính toán điểm điều khiển
+        let controlPoint = start.add(direction.multiply(0.5)).add(normal.multiply(0.5 * direction.mag()));
+        return controlPoint;
+    }
+
+
 
     private enterCollider(event: ITriggerEvent) {
         let t = this;
@@ -182,6 +261,8 @@ export class PlayerController extends Component {
         // this.animation.start();
         // this.createTween();
         // this.test()
+        this.testSequence()
+
     }
     onTouchEnd(e) {
         // this.run = false;
@@ -189,6 +270,7 @@ export class PlayerController extends Component {
         // this.renderSpeed(this.run)
         // Tween.stopAllByTarget(this.node)
         // this.test()
+        Tween.stopAllByTarget(this.node)
     }
     onTouchCancel(e) {
         // this.run = false;
@@ -196,6 +278,8 @@ export class PlayerController extends Component {
         // this.renderSpeed(this.run)
         // Tween.stopAllByTarget(this.node)
         // this.test()
+        Tween.stopAllByTarget(this.node)
+
     }
     onTouchMove(e) {
         // this.run = false;
@@ -203,6 +287,8 @@ export class PlayerController extends Component {
         // this.renderSpeed(this.run)
         // Tween.stopAllByTarget(this.node)
         // this.test()
+        Tween.stopAllByTarget(this.node)
+
     }
 
 
@@ -250,7 +336,7 @@ export class PlayerController extends Component {
                 DataManager.instance.isRun = false
                 break;
         }
-        t.powerSlide(t.redirect);
+        // t.powerSlide(t.redirect);
         // t.renderSpeed(t.run)
     }
 

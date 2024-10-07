@@ -172,7 +172,7 @@ export class GameManager extends Component {
     animationSpeedMile() {
         let t = this;
         let time = 1;
-        Tween.stopAll();
+        Tween.stopAllByTarget(t.wise)
         if (DataManager.instance.isRun) {
             tween(t.wise)
                 .to(time / 2, { eulerAngles: v3(0, 0, -130) }, { easing: easing.linear })
