@@ -35,7 +35,7 @@ export class GameManager extends Component {
         t.addEvent();
         t.schedule(() => {
             t.showSpeed();
-        }, 0.3)
+        }, 0.05)
     }
 
     addEvent() {
@@ -176,23 +176,23 @@ export class GameManager extends Component {
         if (DataManager.instance.isRun) {
             tween(t.wise)
                 .to(time / 2, { eulerAngles: v3(0, 0, -130) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 0.3; })
+                // .call(() => { DataManager.instance.speed = 0.3; })
                 .to(time / 2, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 0.6; })
+                // .call(() => { DataManager.instance.speed = 0.6; })
                 .to(time / 10, { eulerAngles: v3(0, 0, -260) }, { easing: easing.linear })
                 .to(time / 10, { eulerAngles: v3(0, 0, -250) }, { easing: easing.linear })
                 .start();
         } else {
             tween(t.wise)
                 .to(time, { eulerAngles: v3(0, 0, 0) }, { easing: easing.linear })
-                .call(() => { DataManager.instance.speed = 0.05; })
+                // .call(() => { DataManager.instance.speed = 0.05; })
                 .start();
-
         }
     }
     // show label speed
     showSpeed() {
         let speed = ((57 - Math.round((this.wise.rotation.w * (180 / Math.PI)))) * 2) * 2;
+        DataManager.instance.speed = speed / 400; // max 0,75
         this.displaySpeed.getComponent(Label).string = speed.toFixed(0);
     }
 

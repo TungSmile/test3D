@@ -1,5 +1,5 @@
-import { _decorator, Component, Node } from 'cc';
-const { ccclass, property } = _decorator;
+import { _decorator, Component } from 'cc';
+const { ccclass } = _decorator;
 
 @ccclass('DataManager')
 export class DataManager extends Component {
@@ -16,7 +16,13 @@ export class DataManager extends Component {
     }
 
     public isRun: boolean = false;
-    public speed: number = 0.05;
+    public speed: number = 0;
+    public point: number = 0;
+    public offsetX: number = 0;
+
+
+
+
     public redirect: boolean = false;
     public isTurnRight: boolean = false;
 

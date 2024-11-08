@@ -1,4 +1,5 @@
 import { _decorator, Camera, Component, Node, Vec3 } from 'cc';
+import { DataManager } from './DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('CamFollow')
@@ -8,7 +9,7 @@ export class CamFollow extends Component {
     target: Node | null = null;
 
     @property
-    distance: number = 5;
+    distance: number = 4.5;
 
     @property
     height: number = 2;
@@ -18,6 +19,11 @@ export class CamFollow extends Component {
 
     @property
     offsetX: number = 0;
+
+    hello() {
+
+    }
+
 
     private _camera: Camera | null = null;
     start() {
@@ -41,6 +47,9 @@ export class CamFollow extends Component {
         Vec3.scaleAndAdd(desiredPosition, targetPosition, backwardDirection, this.distance);
         desiredPosition.y += this.height;
         desiredPosition.x += this.offsetX;
+        DataManager.instance.offsetX;
+
+
 
         const smoothedPosition = new Vec3();
         Vec3.lerp(smoothedPosition, this.node.worldPosition, desiredPosition, this.smoothness);

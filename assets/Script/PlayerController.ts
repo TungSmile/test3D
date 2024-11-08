@@ -31,6 +31,7 @@ export class PlayerController extends Component {
     public tempMap: Node | null = null;
     public front: Node | null = null;
     public back: Node | null = null;
+    public run
 
     start() {
         let t = this;
@@ -122,7 +123,6 @@ export class PlayerController extends Component {
                 DataManager.instance.speed
             ));
         }
-        // console.log(t.node.ro);
     }
 
 
@@ -183,7 +183,7 @@ export class PlayerController extends Component {
                 let time = Math.max(minTime, baseTime * (distance / 10));
                 console.log("point :" + back.name + "-" + front.name + " dis :" + distance.toFixed(1));
                 let fakeTween = tween(t.node)
-                    .to(time / 100, { position: front.position, rotation: front.rotation }, { easing: eas })
+                    .to(time / 100, { position: front.position, rotation: front.rotation })
                     .call(() => {
                         t.km++;
                     })
@@ -431,7 +431,6 @@ export class PlayerController extends Component {
     //     }
 
     // }
-
 
 
     update(deltaTime: number) {
