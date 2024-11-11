@@ -18,7 +18,7 @@ export class DataManager extends Component {
     public isRun: boolean = false;
     public speed: number = 0;
     public point: number = 0;
-    public offsetX: number = 0;
+    public angle: number = 0;
 
 
 

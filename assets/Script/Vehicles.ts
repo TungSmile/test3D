@@ -17,13 +17,15 @@ export class Vehicles extends Component {
     public map: Node | null = null;
     private angleOf2Point: number = 0;
 
+    @property({ type: Node })
+    public moto: Node | null = null;
 
     start() {
         let t = this;
         t.schedule(() => {
             t.seek()
             t.checkIsNextPoint();
-        }, 0.007);
+        }, 0.005);
         t.calculationAngle();
 
     }
@@ -35,7 +37,6 @@ export class Vehicles extends Component {
             t.calculationAngle();
             // t.node.setRotation(t.map.getChildByName((DataManager.instance.point - 1).toString()).rotation);
             // DataManager.instance.offsetX = 1 / t.angleOf2Point;
-            console.log('a');
 
         }
     }
@@ -70,7 +71,7 @@ export class Vehicles extends Component {
             desired.y = positionTarget.y;
             desired.z = positionTarget.z;
             t.node.position = desired;
-            t.node.setRotation(target.rotation);
+            // t.node.setRotation(target.rotation);
             // t.count += Vec3.distance(desired, t.node.position);
             return
         }
@@ -85,8 +86,15 @@ export class Vehicles extends Component {
         // t.count += Vec3.distance(desired, t.node.position);
         // console.log('s', scale);
 
-        let angle = t.degree * Vec3.distance(desired, t.node.position)
-        t.node.setRotationFromEuler(v3(0, t.node.eulerAngles.y + angle, 0))
+
+
+        // let angle = t.degree * Vec3.distance(desired, t.node.position)
+        // t.node.setRotationFromEuler(v3(0, t.node.eulerAngles.y + angle, 0))
+
+
+
+
+
         // console.log("how many angle", t.count);
         t.node.position = desired;
         // if (Number(angle.toFixed(4)) == 0) {
@@ -117,8 +125,13 @@ export class Vehicles extends Component {
         // frontPoint.rotation.y - backPoint.rotation.y;
         t.degree = t.angleOf2Point / dis;
         // t.distance = dis;
-        console.log("angle", t.angleOf2Point, "angle/distance", t.degree, "total distance", dis, "count", t.count);
+        // console.log("angle", t.angleOf2Point, "angle/distance", t.degree, "total distance", dis, "count", t.count);
 
+        let abc = Vec3.angle(backPoint.position, frontPoint.position);
+        DataManager.instance.angle = frontPoint.eulerAngles.y;
+        //  * (180 / Math.PI);
+        // console.log(abc, "goc giua " + backPoint.name + "-" + frontPoint.name);
+        t.moto.setWorldRotation(Quat.fromEuler(new Quat(), 0, DataManager.instance.angle, 0));
 
     }
 
