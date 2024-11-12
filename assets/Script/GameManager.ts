@@ -53,11 +53,12 @@ export class GameManager extends Component {
         t.goHead.on(Input.EventType.TOUCH_END, t.notRun, this);
         t.goHead.on(Input.EventType.TOUCH_CANCEL, t.notRun, this);
         t.goHead.on(Input.EventType.TOUCH_MOVE, t.notRun, this);
-        t.left.on(Input.EventType.TOUCH_START, t.turnLeft, this);
-        t.left.on(Input.EventType.TOUCH_START, t.turnRight, this);
+        
+        // t.left.on(Input.EventType.TOUCH_START, t.turnLeft, this);
+        // t.left.on(Input.EventType.TOUCH_START, t.turnRight, this);
 
 
-        input.on(Input.EventType.KEY_DOWN, t.downKey, this);
+        // input.on(Input.EventType.KEY_DOWN, t.downKey, this);
 
         // input.on(Input.EventType.KEY_UP, t.upKey, this);
         // t.coll = t.Player.getChildByName("coll").getComponent(BoxCollider);
@@ -166,7 +167,7 @@ export class GameManager extends Component {
         let t = this;
         if (!t.PointS) return;
         t.Player.setWorldPosition(t.PointS.position);
-        // t.Player.setWorldRotation(t.PointS.rotation);
+        t.Player.setWorldRotation(t.PointS.rotation);
 
         // console.log(t.PointS.rotation);
         // let test = new Quat();

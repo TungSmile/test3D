@@ -56,7 +56,7 @@ export class CamFollow extends Component {
         this.node.setWorldPosition(smoothedPosition);
 
         this.node.lookAt(targetPosition);
-        
+
 
         // up 10*
         // this.node.setRotationFromEuler(0,0,10)

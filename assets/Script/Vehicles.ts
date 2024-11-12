@@ -18,14 +18,20 @@ export class Vehicles extends Component {
     private angleOf2Point: number = 0;
 
     @property({ type: Node })
-    public moto: Node | null = null;
+    public body: Node | null = null;
+
+    private timeFrame: number = 0.005
+    // 0.005;
+
+    @property({ type: Node })
+    public test: Node | null = null;
 
     start() {
         let t = this;
         t.schedule(() => {
             t.seek()
             t.checkIsNextPoint();
-        }, 0.005);
+        }, t.timeFrame);
         t.calculationAngle();
 
     }
@@ -35,7 +41,7 @@ export class Vehicles extends Component {
         if (t.numberP != DataManager.instance.point) {
             t.numberP = DataManager.instance.point;
             t.calculationAngle();
-            // t.node.setRotation(t.map.getChildByName((DataManager.instance.point - 1).toString()).rotation);
+            t.node.setRotation(t.map.getChildByName((DataManager.instance.point - 1).toString()).rotation);
             // DataManager.instance.offsetX = 1 / t.angleOf2Point;
 
         }
@@ -47,18 +53,7 @@ export class Vehicles extends Component {
         if (!DataManager.instance.isRun) {
             return
         }
-        let maxStep = DataManager.instance.speed;
-        // let desired = new Vec3();
-        // Vec3.subtract(desired, taget, t.node .position);
-        // if (Vec3.len(desired) < t.maxSpped) {s
-        //     // check max speed
-        // }
-        // let steer = new Vec3();
-        // Vec3.subtract(steer, desired, t.velocity)
-        // if (Vec3.len(steer) < t.maxForce) {
-        //     // check max force
-        // }
-        // t.acceleration = steer;
+        let maxSpeed = DataManager.instance.speed;
         let target = t.map.getChildByName(DataManager.instance.point.toString())
         let positionTarget = target.position;
         let desired = new Vec3();
@@ -66,49 +61,25 @@ export class Vehicles extends Component {
         const deltaY = positionTarget.y - t.node.position.y;
         const deltaZ = positionTarget.z - t.node.position.z;
         const distanceSqr = deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ;
-        if (distanceSqr === 0 || (maxStep >= 0 && distanceSqr < maxStep * maxStep)) {
+        if (distanceSqr === 0 || (maxSpeed >= 0 && distanceSqr < maxSpeed * maxSpeed)) {
             desired.x = positionTarget.x;
             desired.y = positionTarget.y;
             desired.z = positionTarget.z;
             t.node.position = desired;
             // t.node.setRotation(target.rotation);
-            // t.count += Vec3.distance(desired, t.node.position);
             return
         }
         const distance = Math.sqrt(distanceSqr);
-        const scale = maxStep / distance;
+        const scale = maxSpeed / distance;
         desired.x = t.node.position.x + deltaX * scale;
         desired.y = t.node.position.y + deltaY * scale;
         desired.z = t.node.position.z + deltaZ * scale;
-        // let angle = t.degree * (distance / t.distance);
-        // let temp = Number((Vec3.angle(t.node.position, desired) * (180 / Math.PI)).toFixed(1));
-        // console.log('angle between of target and desired', temp);
-        // t.count += Vec3.distance(desired, t.node.position);
-        // console.log('s', scale);
 
+        // t.test.lookAt(desired);
+        // console.log(t.test.eulerAngles.y);
 
-
-        // let angle = t.degree * Vec3.distance(desired, t.node.position)
-        // t.node.setRotationFromEuler(v3(0, t.node.eulerAngles.y + angle, 0))
-
-
-
-
-
-        // console.log("how many angle", t.count);
         t.node.position = desired;
-        // if (Number(angle.toFixed(4)) == 0) {
-        //     t.count = 0;
-        // } else
-        // if (t.distance != 0)
-        //     t.node.setRotationFromEuler(v3(0, t.node.eulerAngles.y + angle, 0))
-        // console.log(t.node.eulerAngles.y, angle, t.node.eulerAngles.y + angle);
-        // t.count += Number(angle.toFixed(4))
-        // console.log(t.count);
-
-        // DataManager.instance.offsetX != 0 ? DataManager.instance.offsetX -= 0.005 : 0;
-
-
+        
 
     }
 
@@ -124,14 +95,8 @@ export class Vehicles extends Component {
         t.angleOf2Point = frontPoint.eulerAngles.y - backPoint.eulerAngles.y;
         // frontPoint.rotation.y - backPoint.rotation.y;
         t.degree = t.angleOf2Point / dis;
-        // t.distance = dis;
-        // console.log("angle", t.angleOf2Point, "angle/distance", t.degree, "total distance", dis, "count", t.count);
-
-        let abc = Vec3.angle(backPoint.position, frontPoint.position);
         DataManager.instance.angle = frontPoint.eulerAngles.y;
-        //  * (180 / Math.PI);
-        // console.log(abc, "goc giua " + backPoint.name + "-" + frontPoint.name);
-        t.moto.setWorldRotation(Quat.fromEuler(new Quat(), 0, DataManager.instance.angle, 0));
+        // t.body.setWorldRotation(Quat.fromEuler(new Quat(), 0, DataManager.instance.angle, 0));
 
     }
 
