@@ -53,14 +53,14 @@ export class GameManager extends Component {
         t.goHead.on(Input.EventType.TOUCH_END, t.notRun, this);
         t.goHead.on(Input.EventType.TOUCH_CANCEL, t.notRun, this);
         t.goHead.on(Input.EventType.TOUCH_MOVE, t.notRun, this);
-        
+
         // t.left.on(Input.EventType.TOUCH_START, t.turnLeft, this);
         // t.left.on(Input.EventType.TOUCH_START, t.turnRight, this);
 
 
-        // input.on(Input.EventType.KEY_DOWN, t.downKey, this);
+        input.on(Input.EventType.KEY_DOWN, t.downKey, this);
+        input.on(Input.EventType.KEY_UP, t.upKey, this);
 
-        // input.on(Input.EventType.KEY_UP, t.upKey, this);
         // t.coll = t.Player.getChildByName("coll").getComponent(BoxCollider);
         // t.coll.on('onTriggerEnter', this.goToPoint, this);
 
@@ -121,8 +121,11 @@ export class GameManager extends Component {
                 // this.speedMeter == 0 ? 0 : t.speedMeter -= 10;
                 break;
             case KeyCode.KEY_A:
+                DataManager.instance.redirect = false;
                 break;
             case KeyCode.KEY_D:
+                DataManager.instance.redirect = false;
+
                 break;
             default:
                 DataManager.instance.isRun = false
@@ -139,12 +142,15 @@ export class GameManager extends Component {
     turnLeft() {
         let t = this;
         DataManager.instance.angle--;
-
+        DataManager.instance.redirect = true;
+        DataManager.instance.isTurnRight = false;
     }
 
     turnRight() {
         let t = this;
         DataManager.instance.angle++;
+        DataManager.instance.redirect = true;
+        DataManager.instance.isTurnRight = true;
 
     }
 

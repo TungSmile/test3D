@@ -19,22 +19,42 @@ export class Vehicles extends Component {
 
     @property({ type: Node })
     public body: Node | null = null;
+    @property({ type: Node })
+    public test1: Node | null = null;
+    @property({ type: Node })
+    public test2: Node | null = null;
 
-    private timeFrame: number = 0.005
+    private timeFrame: number = 0.001
     // 0.005;
 
-    @property({ type: Node })
-    public test: Node | null = null;
 
     start() {
         let t = this;
         t.schedule(() => {
             t.seek()
             t.checkIsNextPoint();
+            // t.goHeadByPositionZ()
         }, t.timeFrame);
         t.calculationAngle();
 
+        // t.test()
+
+        // t.schedule(() => {
+        //     let temp = v3(t.node.position.x, t.node.position.y, t.node.position.z + 0.5)
+        //     t.node.position = temp;
+        // }, t.timeFrame);
+
     }
+
+
+    test() {
+        let t = this;
+
+        console.log(t.test1.getWorldPosition());
+
+    }
+
+
 
     checkIsNextPoint() {
         let t = this;
@@ -49,6 +69,7 @@ export class Vehicles extends Component {
 
 
     seek() {
+        // funtion only sovle move
         let t = this;
         if (!DataManager.instance.isRun) {
             return
@@ -75,13 +96,38 @@ export class Vehicles extends Component {
         desired.y = t.node.position.y + deltaY * scale;
         desired.z = t.node.position.z + deltaZ * scale;
 
-        // t.test.lookAt(desired);
-        // console.log(t.test.eulerAngles.y);
+        // t.node.position = desired;
 
-        t.node.position = desired;
-        
+        let velocity = new Vec3();
+        t.test1.getWorldPosition(velocity);
+        let steering = new Vec3();
+        Vec3.lerp(steering, desired, velocity, 0.1)
+        t.node.position = steering;
+        // console.log(t.test1.getWorldRotation(), t.node.getWorldRotation());
+
+        // t.node.setWorldRotation(t.test1.getWorldRotation())
+        // let angle = DataManager.instance.isTurnRight ? (t.node.eulerAngles.y - t.timeFrame/100) : (t.node.eulerAngles.y + t.timeFrame/100);
+        // DataManager.instance.redirect ?
+        //     t.node.setWorldRotation(Quat.fromAxisAngle(new Quat(), new Vec3(0, 1, 0), angle)) : 0;
+
 
     }
+
+    changeAngle(A: Vec3, B: Vec3, radia) {
+        let dotP = Vec3.dot(A, B);
+        let lengthA = A.length();
+        let lengthB = B.length();
+        let cosTheta = dotP / (lengthA * lengthB)
+        let radianOf2V = Math.acos(cosTheta) * (180 / Math.PI);
+        // console.log("độ :" + radianOf2V);
+        let axis = new Vec3(0, 1, 0);
+        let quater = new Quat();
+        return Quat.fromAxisAngle(quater, axis, ((radia) + radianOf2V));
+
+    }
+
+
+
 
     calculationAngle() {
         let t = this;
@@ -101,8 +147,33 @@ export class Vehicles extends Component {
     }
 
 
-    update(deltaTime: number) {
+    goHeadByPositionZ() {
+        // only 2d work normal, not 3d
+        let t = this;
+        if (!DataManager.instance.isRun) {
+            return
+        }
+        let positionNew = new Vec3(t.node.position.x, t.node.position.y, t.node.position.z + DataManager.instance.speed);
+        t.node.position = positionNew;
+    }
 
+
+
+
+    update(deltaTime: number) {
+        // if (t.redirect) {
+        //     // let direct = new Quat;
+        //     let rotationCar = new Quat;
+        //     let d = t.speed > 60 ? 1 : 2;
+        //     // Quat.fromAxisAngle(direct, Vec3.FORWARD, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) : ((deltaTime * 100) * Math.PI / 180));
+        //     // t.temp.rotate(direct);
+        //     Quat.fromAxisAngle(rotationCar, Vec3.UP, t.isRight ? ((-deltaTime * 100) * Math.PI / 180) / d : ((deltaTime * 100) * Math.PI / 180) / d);
+        //     t.node.rotate(rotationCar);
+        //     // const movement = t.temp.position.clone();
+        //     // let temp = movement.x > 3 || movement.x < -3 ? -0.01 : 0.01
+        //     // Vec3.multiplyScalar(movement, new Vec3(1, 0, 0), t.isRight ? temp * -1 : temp);
+        //     // t.controllDirect.translate(movement);
+        // }
     }
 }
 

@@ -52,9 +52,7 @@ export class CamFollow extends Component {
 
         const smoothedPosition = new Vec3();
         Vec3.lerp(smoothedPosition, this.node.worldPosition, desiredPosition, this.smoothness);
-
         this.node.setWorldPosition(smoothedPosition);
-
         this.node.lookAt(targetPosition);
 
 
