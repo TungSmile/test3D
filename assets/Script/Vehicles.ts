@@ -24,7 +24,7 @@ export class Vehicles extends Component {
     @property({ type: Node })
     public test2: Node | null = null;
 
-    private timeFrame: number = 0.001
+    private timeFrame: number = 0.0005
     // 0.005;
 
 
@@ -49,9 +49,14 @@ export class Vehicles extends Component {
 
     test() {
         let t = this;
+        // let velocity = new Vec3();
+        // t.test1.getWorldPosition(velocity);
+        // let temp = Vec3.angle(velocity, t.node.forward) * (180 / Math.PI) - 90;
+        // console.log('goc cua moto', temp);
 
-        console.log(t.test1.getWorldPosition());
 
+        let temp = Vec3.angle(t.test1.position, t.test2.position) * (180 / Math.PI)
+        console.log('goc cua moto', temp);
     }
 
 
@@ -61,22 +66,21 @@ export class Vehicles extends Component {
         if (t.numberP != DataManager.instance.point) {
             t.numberP = DataManager.instance.point;
             t.calculationAngle();
-            t.node.setRotation(t.map.getChildByName((DataManager.instance.point - 1).toString()).rotation);
+            // t.node.setRotation(t.map.getChildByName((DataManager.instance.point - 1).toString()).rotation);
             // DataManager.instance.offsetX = 1 / t.angleOf2Point;
-
+            // console.log(t.body.eulerAngles.y, t.numberP);
         }
     }
 
 
     seek() {
-        // funtion only sovle move
         let t = this;
         if (!DataManager.instance.isRun) {
             return
         }
         let maxSpeed = DataManager.instance.speed;
         let target = t.map.getChildByName(DataManager.instance.point.toString())
-        let positionTarget = target.position;
+        let positionTarget = target.position.clone();
         let desired = new Vec3();
         const deltaX = positionTarget.x - t.node.position.x;
         const deltaY = positionTarget.y - t.node.position.y;
@@ -95,40 +99,82 @@ export class Vehicles extends Component {
         desired.x = t.node.position.x + deltaX * scale;
         desired.y = t.node.position.y + deltaY * scale;
         desired.z = t.node.position.z + deltaZ * scale;
-
         // t.node.position = desired;
 
+
+
+
+
+
+        // tạo velocity tăng độ smooth
         let velocity = new Vec3();
         t.test1.getWorldPosition(velocity);
-        let steering = new Vec3();
-        Vec3.lerp(steering, desired, velocity, 0.1)
-        t.node.position = steering;
-        // console.log(t.test1.getWorldRotation(), t.node.getWorldRotation());
 
+
+        let steering = new Vec3();
+        Vec3.lerp(steering, desired, velocity, 0.1);
+
+
+        // test
+        let temp = Vec3.angle(steering, target.getWorldPosition(new Vec3)) * (180 / Math.PI)
+        console.log('goc cua moto', temp);
+        console.log.bind
+
+
+        t.node.position = steering;
+
+        // console.log('test goc', t.getAngleBetweenVector(velocity, target.position));
+
+        // console.log(t.test1.getWorldRotation(), t.node.getWorldRotation());
         // t.node.setWorldRotation(t.test1.getWorldRotation())
-        // let angle = DataManager.instance.isTurnRight ? (t.node.eulerAngles.y - t.timeFrame/100) : (t.node.eulerAngles.y + t.timeFrame/100);
+        // let angle = DataManager.instance.isTurnRight ? (t.node.eulerAngles.y - t.timeFrame / 100) : (t.node.eulerAngles.y + t.timeFrame / 100);
         // DataManager.instance.redirect ?
         //     t.node.setWorldRotation(Quat.fromAxisAngle(new Quat(), new Vec3(0, 1, 0), angle)) : 0;
 
+        DataManager.instance.angle += (t.degree * distance / t.disNext);
+        // console.log(t.degree, distance / t.disNext, DataManager.instance.angle);
+
+        // let axis = new Vec3(0, 1, 0);
+        // let quatTranfer = new Quat();
+        // let QuatAngle = Quat.fromAxisAngle(quatTranfer, axis, DataManager.instance.angle);
+        // t.node.setWorldRotation(QuatAngle);
+
+        // t.body.setRotationFromEuler(v3(0, DataManager.instance.angle, 0))
+
+
+
+
+        // console.log( t.test1.getWorldRotation);
+
+
+
+
 
     }
 
-    changeAngle(A: Vec3, B: Vec3, radia) {
+    getAngleBetweenVector(A: Vec3, B: Vec3) {
+        // tích vô hướng của 2 vector
         let dotP = Vec3.dot(A, B);
+        // dộ lớn của 2 vector
         let lengthA = A.length();
         let lengthB = B.length();
+        // tính cosin của góc
         let cosTheta = dotP / (lengthA * lengthB)
+        // tính góc radian rồi chuyển sang độ
         let radianOf2V = Math.acos(cosTheta) * (180 / Math.PI);
         // console.log("độ :" + radianOf2V);
-        let axis = new Vec3(0, 1, 0);
-        let quater = new Quat();
-        return Quat.fromAxisAngle(quater, axis, ((radia) + radianOf2V));
+        let rs = new Vec3();
+
+        return radianOf2V
+        // let axis = new Vec3(0, 1, 0);
+        // let quater = new Quat();
+        // return Quat.fromAxisAngle(quater, axis, ((radia) + radianOf2V));
 
     }
 
 
 
-
+    disNext: number = 0;
     calculationAngle() {
         let t = this;
         let backPoint;
@@ -137,12 +183,12 @@ export class Vehicles extends Component {
         } else
             backPoint = t.map.getChildByName((DataManager.instance.point - 1).toString());
         let frontPoint = t.map.getChildByName((DataManager.instance.point).toString());
-        let dis = Vec3.distance(backPoint.position, frontPoint.position);
+        t.disNext = Vec3.distance(backPoint.position, frontPoint.position);
         t.angleOf2Point = frontPoint.eulerAngles.y - backPoint.eulerAngles.y;
         // frontPoint.rotation.y - backPoint.rotation.y;
-        t.degree = t.angleOf2Point / dis;
-        DataManager.instance.angle = frontPoint.eulerAngles.y;
+        t.degree = t.angleOf2Point / t.disNext;
         // t.body.setWorldRotation(Quat.fromEuler(new Quat(), 0, DataManager.instance.angle, 0));
+        // console.log(t.disNext, t.degree);
 
     }
 

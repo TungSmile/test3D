@@ -33,11 +33,14 @@ export class CamFollow extends Component {
     }
 
     followTarget() {
+
+
+
         if (!this.target || !this._camera) return;
 
         const targetPosition = this.target.worldPosition;
         const targetRotation = this.target.worldRotation;
-
+       
         // Tạo một vector hướng ngược lại với Vec3.FORWARD
         const backwardDirection = new Vec3(0, 0, -1);
         Vec3.transformQuat(backwardDirection, backwardDirection, targetRotation);

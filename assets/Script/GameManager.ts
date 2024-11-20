@@ -58,8 +58,8 @@ export class GameManager extends Component {
         // t.left.on(Input.EventType.TOUCH_START, t.turnRight, this);
 
 
-        input.on(Input.EventType.KEY_DOWN, t.downKey, this);
-        input.on(Input.EventType.KEY_UP, t.upKey, this);
+        // input.on(Input.EventType.KEY_DOWN, t.downKey, this);
+        // input.on(Input.EventType.KEY_UP, t.upKey, this);
 
         // t.coll = t.Player.getChildByName("coll").getComponent(BoxCollider);
         // t.coll.on('onTriggerEnter', this.goToPoint, this);
@@ -174,7 +174,7 @@ export class GameManager extends Component {
         if (!t.PointS) return;
         t.Player.setWorldPosition(t.PointS.position);
         t.Player.setWorldRotation(t.PointS.rotation);
-
+        // DataManager.instance.angle = t.Player.eulerAngles.y;
         // console.log(t.PointS.rotation);
         // let test = new Quat();
         // t.Player.setWorldRotation(Quat.fromEuler(test, 0, 149, 0));
@@ -204,7 +204,7 @@ export class GameManager extends Component {
     // show label speed
     showSpeed() {
         let speed = ((57 - Math.round((this.wise.rotation.w * (180 / Math.PI)))) * 2) * 2;
-        DataManager.instance.speed = speed / 500; // max 0,75
+        DataManager.instance.speed = speed / 700; // max 
         this.displaySpeed.getComponent(Label).string = speed.toFixed(0);
     }
 
