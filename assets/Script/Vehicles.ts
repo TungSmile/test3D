@@ -131,7 +131,7 @@ export class Vehicles extends Component {
 
 
 
-        t.node.position = steering;
+        // t.node.position = steering;
 
 
 
@@ -152,6 +152,7 @@ export class Vehicles extends Component {
         // DataManager.instance.redirect ?
         //     t.node.setWorldRotation(Quat.fromAxisAngle(new Quat(), new Vec3(0, 1, 0), angle)) : 0;
 
+        // distance ko khớp với disNext
         DataManager.instance.angle += (t.degree * distance / t.disNext);
 
         //fail
@@ -161,7 +162,8 @@ export class Vehicles extends Component {
         // let QuatAngle = Quat.fromAxisAngle(quatTranfer, axis, (DataManager.instance.angle - 149));
         // t.body.setWorldRotation(QuatAngle);
 
-        t.body.setRotationFromEuler(v3(0, t.body.eulerAngles.y +0.005, 0))
+        // use func set rotation  still feeling ok
+        t.body.setRotationFromEuler(v3(0, t.body.eulerAngles.y + 0.005, 0))
 
 
 
