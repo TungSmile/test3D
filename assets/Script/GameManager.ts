@@ -204,7 +204,7 @@ export class GameManager extends Component {
     // show label speed
     showSpeed() {
         let speed = ((57 - Math.round((this.wise.rotation.w * (180 / Math.PI)))) * 2) * 2;
-        DataManager.instance.speed = speed / 700; // max 
+        DataManager.instance.speed = speed / 400; // max 
         this.displaySpeed.getComponent(Label).string = speed.toFixed(0);
     }
 

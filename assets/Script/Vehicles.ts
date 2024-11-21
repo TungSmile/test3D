@@ -24,7 +24,7 @@ export class Vehicles extends Component {
     @property({ type: Node })
     public test2: Node | null = null;
 
-    private timeFrame: number = 0.0005
+    private timeFrame: number = 0.005
     // 0.005;
 
 
@@ -78,13 +78,14 @@ export class Vehicles extends Component {
         if (!DataManager.instance.isRun) {
             return
         }
+        let n = t.node.getWorldPosition(new Vec3());
         let maxSpeed = DataManager.instance.speed;
         let target = t.map.getChildByName(DataManager.instance.point.toString())
-        let positionTarget = target.position.clone();
+        let positionTarget = target.getWorldPosition(new Vec3());
         let desired = new Vec3();
-        const deltaX = positionTarget.x - t.node.position.x;
-        const deltaY = positionTarget.y - t.node.position.y;
-        const deltaZ = positionTarget.z - t.node.position.z;
+        const deltaX = positionTarget.x - n.x;
+        const deltaY = positionTarget.y - n.y;
+        const deltaZ = positionTarget.z - n.z;
         const distanceSqr = deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ;
         if (distanceSqr === 0 || (maxSpeed >= 0 && distanceSqr < maxSpeed * maxSpeed)) {
             desired.x = positionTarget.x;
@@ -94,37 +95,57 @@ export class Vehicles extends Component {
             // t.node.setRotation(target.rotation);
             return
         }
+
         const distance = Math.sqrt(distanceSqr);
         const scale = maxSpeed / distance;
         desired.x = t.node.position.x + deltaX * scale;
         desired.y = t.node.position.y + deltaY * scale;
         desired.z = t.node.position.z + deltaZ * scale;
+        // desired là vec3 của world
         // t.node.position = desired;
-
-
-
 
 
 
         // tạo velocity tăng độ smooth
         let velocity = new Vec3();
         t.test1.getWorldPosition(velocity);
-
-
         let steering = new Vec3();
         Vec3.lerp(steering, desired, velocity, 0.1);
 
 
-        // test
-        let temp = Vec3.angle(steering, target.getWorldPosition(new Vec3)) * (180 / Math.PI)
-        console.log('goc cua moto', temp);
-        console.log.bind
+
+        // lấy góc hướng
+        // let wpn = t.test1.position.clone();
+        // t.node.getWorldPosition();
+        // t.test2.setWorldPosition(steering);
+        // let wpt = t.node.inverseTransformPoint(new Vec3(), positionTarget)
+        // positionTarget
+        // t.test2.getWorldPosition();
+        // let director = wpn.subtract(wpt).normalize();
+        // let angleTemp = Vec3.angle(director, v3(0, 1, 0)) * (180 / Math.PI);
+        // console.log(angleTemp);
+        // t.test2.position = wpt
+        let rs = t.getAngleBetweenVector(t.test1.position.clone(), t.node.inverseTransformPoint(new Vec3(), steering))
+        console.log(rs);
+
+
 
 
         t.node.position = steering;
 
-        // console.log('test goc', t.getAngleBetweenVector(velocity, target.position));
 
+
+
+
+        // test
+        // let temp = Vec3.angle(steering, target.getWorldPosition(new Vec3)) * (180 / Math.PI)
+        // console.log('goc cua moto', temp);
+        // let QuatAngle = Quat.fromAxisAngle(new Quat(), new Vec3(0, 1, 0), temp);
+        // t.node.setWorldRotation(QuatAngle);
+
+
+        // fail
+        // console.log('test goc', t.getAngleBetweenVector(velocity, target.position));
         // console.log(t.test1.getWorldRotation(), t.node.getWorldRotation());
         // t.node.setWorldRotation(t.test1.getWorldRotation())
         // let angle = DataManager.instance.isTurnRight ? (t.node.eulerAngles.y - t.timeFrame / 100) : (t.node.eulerAngles.y + t.timeFrame / 100);
@@ -132,21 +153,15 @@ export class Vehicles extends Component {
         //     t.node.setWorldRotation(Quat.fromAxisAngle(new Quat(), new Vec3(0, 1, 0), angle)) : 0;
 
         DataManager.instance.angle += (t.degree * distance / t.disNext);
-        // console.log(t.degree, distance / t.disNext, DataManager.instance.angle);
 
+        //fail
+        // console.log(t.degree, distance / t.disNext, DataManager.instance.angle);
         // let axis = new Vec3(0, 1, 0);
         // let quatTranfer = new Quat();
-        // let QuatAngle = Quat.fromAxisAngle(quatTranfer, axis, DataManager.instance.angle);
-        // t.node.setWorldRotation(QuatAngle);
+        // let QuatAngle = Quat.fromAxisAngle(quatTranfer, axis, (DataManager.instance.angle - 149));
+        // t.body.setWorldRotation(QuatAngle);
 
-        // t.body.setRotationFromEuler(v3(0, DataManager.instance.angle, 0))
-
-
-
-
-        // console.log( t.test1.getWorldRotation);
-
-
+        t.body.setRotationFromEuler(v3(0, t.body.eulerAngles.y +0.005, 0))
 
 
 
@@ -188,7 +203,7 @@ export class Vehicles extends Component {
         // frontPoint.rotation.y - backPoint.rotation.y;
         t.degree = t.angleOf2Point / t.disNext;
         // t.body.setWorldRotation(Quat.fromEuler(new Quat(), 0, DataManager.instance.angle, 0));
-        // console.log(t.disNext, t.degree);
+        // console.log('do lech', frontPoint.eulerAngles.y - 149);
 
     }
 
